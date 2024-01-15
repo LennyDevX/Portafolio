@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FaGithub, FaDiscord, FaSpaceShuttle } from 'react-icons/fa';
+import { faHandshake, faMicrochip, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import '../assets/Card.css' // Asegúrate de importar el archivo CSS
+import { Fade } from 'react-bootstrap';
 
-const Card = ({ icon, title, description, buttonText }) => {
+const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
@@ -21,44 +23,78 @@ const Card = ({ icon, title, description, buttonText }) => {
         "card", // Añade la clase 'card' para aplicar el estilo CSS
         "max-w-sm",
         "rounded-xl",
-        "shadow-xl",
         "text-center",
         "text-white",
         "bg-black",
         "mt-10",
-        "p-3",
+        "mb-5",
+        "p-4",
         "transition-colors",
         "duration-400",
         "group",
-        "hover:bg-blue-600",
-        "hover:shadow-2xl"
+        "hover:bg-white", // Cambia el color de fondo a blanco al hacer hover
+        "hover:text-black", // Cambia el color del texto a negro al hacer hover
+        "hover:shadow-2xl",
+        "mx-2",
+        "md:mx-0"
     );
-
+    
     const paragraphClasses = classNames(
         "m-2",
         "text-white",
-        "group-hover:text-white",
+        "group-hover:text-black", // Cambia el color del texto a negro al hacer hover
         "transition",
         "duration-400",
     );
+
+    let iconElement;
+    switch (icon) {
+        case 'building':
+            iconElement = <FontAwesomeIcon icon={faHandshake} size="3x" className="block mx-auto mb-4" />;
+            break;
+        case 'briefcase':
+            iconElement = <FontAwesomeIcon icon={faBriefcase} size="3x" className="block mx-auto mb-4" />;
+            break;
+        case 'microchip':
+            iconElement = <FontAwesomeIcon icon={faMicrochip} size="3x" className="block mx-auto mb-4" />;
+            break;
+        default:
+            iconElement = null;
+    }
+
+    let buttonIconElement;
+    switch (buttonIcon) {
+        case 'github':
+            buttonIconElement = <FaGithub className="mr-2" />;
+            break;
+        case 'discord':
+            buttonIconElement = <FaDiscord className="mr-2" />;
+            break;
+        case 'rocket':
+            buttonIconElement = <FaSpaceShuttle className="mr-2" />;
+            break;
+        default:
+            buttonIconElement = null;
+    }
 
     return (
         <motion.div 
         className={cardClasses}
         initial={{ opacity: 0, y: 100  }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.1}}
-        whileHover={{ scale: 1.05, backgroundColor: "#7fa2edab" }} // Cambia el valor de escala aquí y añade el cambio de color de fondo
+        transition={{ duration: 0.6, delay: 0.1}}
+        whileHover={{ scale: 1.05, backgroundColor: "#dddddd9a" }} // Cambia el valor de escala aquí y añade el cambio de color de fondo
     >
-            <FontAwesomeIcon icon={icon} size="3x" className="block mx-auto mb-4" />
+            {iconElement}
             <div className= "px-6 py-4">
                 <div className="font-bold text-xl mb-2">{title}</div>
                 <p className={paragraphClasses}>
                     {description}
                 </p>
-                <button type="button" className="mt-4 bg-blue-500 hover:bg-black transform transition-transform hover:scale-110 text-white font-bold py-2 px-4 rounded inline-flex items-center">
-                    <FontAwesomeIcon icon={faGithub} className="mr-2" />
-                    {buttonText}
+                
+                <button type="button" className="mt-4 border-r-2 border-blue-800 transform transition-transform hover:scale-110 hover:text-black font-bold py-2 px-4 rounded-xl inline-flex items-center">
+                {buttonIconElement}
+                {buttonText}
                 </button>
             </div>
         </motion.div>
@@ -66,10 +102,11 @@ const Card = ({ icon, title, description, buttonText }) => {
 };
 
 Card.propTypes = {
-    icon: PropTypes.object.isRequired,
+    icon: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     buttonText: PropTypes.string.isRequired,
+    buttonIcon: PropTypes.string,
 };
 
 export default Card;

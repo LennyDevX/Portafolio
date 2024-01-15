@@ -4,7 +4,7 @@ import { useRef } from 'react';
 
 const HeroSection = () => {
     const image = {
-        src: '../../public/LennyDev3.png',
+        src: '/LennyDev3.png',
         alt: 'Descripción de la imagen',
         width: 500,
         height: 500,
