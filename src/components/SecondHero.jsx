@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import DailyMotivation from '../../public/DailyMotivation.png';
 
-const HeroSection = () => {
+const SecondHero = () => {
     const image = {
-        src: '/LennyDev3.png',
-        alt: 'Imagen de Hero',
+        src: DailyMotivation,
+        alt: 'Daily Motivation',
         width: 350,
         height: 350,
         layout: 'responsive',
@@ -12,15 +13,12 @@ const HeroSection = () => {
     const [index, setIndex] = useState(0);
     const [subIndex, setSubIndex] = useState(0);
     const [reverse, setReverse] = useState(false);
-    const text = ["Hello, I'm Lenny", "Developer UI/UX", "Minimalist First", "Awesomen Styles", "Apps and much more...", "How Can I Help You?"];
+    const text = ["Stay motivated", "Every day", "With our daily tips"];
 
-    // Efecto de escritura
     useEffect(() => {
         if (index === text.length) return;
 
-        if ( subIndex === text[index].length+1 && 
-            index !== text.length-1 && 
-            !reverse ) {
+        if (subIndex === text[index].length + 1 && index !== text.length - 1 && !reverse) {
             setReverse(true);
             return;
         }
@@ -36,7 +34,7 @@ const HeroSection = () => {
         }, 75);
 
         return () => clearTimeout(timeout);
-    }, [subIndex, index, reverse, text]); // Agregado 'text' a las dependencias
+    }, [subIndex, index, reverse, text]);
 
     return (
         <div className="hero-section flex flex-col md:flex-row items-center justify-center px-2 md:px-4 mt-2 md:mt-4">
@@ -50,17 +48,17 @@ const HeroSection = () => {
                     {`${text[index].substring(0, subIndex)}${subIndex === text[index].length ? '_' : ''}`}
                 </h1>
                 <p className="hero-section-paragraph mt-2 text-lg md:text-xl">
-                    Welcome to my digital world, explore my own Apps and webs! If you are looking for more, I invite you to explore the Blog section with more info.
+                    Welcome to our daily motivation tips. Stay motivated every day!
                 </p>
                 <a
                     className="hero-section-button mt-2 inline-block bg-black text-white py-2 px-4 rounded"
-                    title="Más información sobre mí"
+                    title="Learn more about our daily motivation tips"
                 >
-                    Hire me!
+                    Learn More
                 </a>
             </div>
         </div>
     );
 };
 
-export default HeroSection;
+export default SecondHero;
