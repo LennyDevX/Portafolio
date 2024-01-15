@@ -79,8 +79,8 @@ const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
     return (
         <motion.div 
         className={cardClasses}
-        initial={{ opacity: 0, y: 100  }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0,   }}
+        animate={{ opacity: 1, }}
         transition={{ duration: 0.6, delay: 0.1}}
         whileHover={{ scale: 1.05, backgroundColor: "#dddddd9a" }} // Cambia el valor de escala aquí y añade el cambio de color de fondo
     >
