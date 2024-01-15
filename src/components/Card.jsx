@@ -6,7 +6,6 @@ import { faHandshake, faMicrochip, faBriefcase } from '@fortawesome/free-solid-s
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import '../assets/Card.css' // Asegúrate de importar el archivo CSS
-import { Fade } from 'react-bootstrap';
 
 const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
     const [isClient, setIsClient] = useState(false);
