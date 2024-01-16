@@ -92,7 +92,7 @@ useEffect(() => {
                         Welcome to my digital world, explore my own Apps and webs! If you are looking for more, I invite you to explore the Blog section with more info.
                     </motion.p>
                     <motion.button
-                        className="hero-section-button mt-4 inline-block bg-black text-white hover:bg-blue py-3 px-5 rounded-full transform transition-transform duration-300 hover:scale-110"
+                        className="hero-section-button mt-4 inline-block bg-black text-white hover:bg-blue py-3 px-5 rounded-xl transform transition-transform duration-300 hover:scale-110"
                         title="Learn more about our daily motivation tips"
                         initial={{ opacity: 0, }} 
                         animate={{ opacity: 1, }} 

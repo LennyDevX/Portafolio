@@ -21,10 +21,11 @@ const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
     const cardClasses = classNames(
         "card", // Añade la clase 'card' para aplicar el estilo CSS
         "max-w-sm",
-        "rounded-xl",
+        "rounded-lg",
         "text-center",
         "text-white",
-        "bg-black",
+        "bg-black bg-opacity-50", // Cambia el color de fondo a negro semi-transparente
+        "shadow-2xl",
         "mt-10",
         "mb-5",
         "p-4",
