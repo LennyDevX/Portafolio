@@ -25,15 +25,13 @@ const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
         "text-center",
         "text-white",
         "bg-black bg-opacity-50", // Cambia el color de fondo a negro semi-transparente
-        "shadow-2xl",
-        "mt-10",
+        "mt-4",
         "mb-5",
-        "p-4",
+        "p-5",
         "transition-colors",
         "duration-400",
         "group",
-        "hover:bg-white", // Cambia el color de fondo a blanco al hacer hover
-        "hover:text-black", // Cambia el color del texto a negro al hacer hover
+        "hover:text-white", // Cambia el color del texto a blanco al hacer hover
         "hover:shadow-2xl",
         "mx-2",
         "md:mx-0"
@@ -42,7 +40,7 @@ const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
     const paragraphClasses = classNames(
         "m-2",
         "text-white",
-        "group-hover:text-black", // Cambia el color del texto a negro al hacer hover
+        "group-hover:text-white", // Cambia el color del texto a blanco al hacer hover
         "transition",
         "duration-400",
     );
@@ -50,13 +48,13 @@ const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
     let iconElement;
     switch (icon) {
         case 'building':
-            iconElement = <FontAwesomeIcon icon={faHandshake} size="3x" className="block mx-auto mb-4" />;
+            iconElement = <FontAwesomeIcon icon={faHandshake} size="3x" className="block mx-auto mb-4 group-hover:text-white" />;
             break;
         case 'briefcase':
-            iconElement = <FontAwesomeIcon icon={faBriefcase} size="3x" className="block mx-auto mb-4" />;
+            iconElement = <FontAwesomeIcon icon={faBriefcase} size="3x" className="block mx-auto mb-4 group-hover:text-white" />;
             break;
         case 'microchip':
-            iconElement = <FontAwesomeIcon icon={faMicrochip} size="3x" className="block mx-auto mb-4" />;
+            iconElement = <FontAwesomeIcon icon={faMicrochip} size="3x" className="block mx-auto mb-4 group-hover:text-white" />;
             break;
         default:
             iconElement = null;
@@ -65,13 +63,13 @@ const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
     let buttonIconElement;
     switch (buttonIcon) {
         case 'github':
-            buttonIconElement = <FaGithub className="mr-2" />;
+            buttonIconElement = <FaGithub className="mr-2 group-hover:text-white" />;
             break;
         case 'discord':
-            buttonIconElement = <FaDiscord className="mr-2" />;
+            buttonIconElement = <FaDiscord className="mr-2 group-hover:text-white" />;
             break;
         case 'rocket':
-            buttonIconElement = <FaSpaceShuttle className="mr-2" />;
+            buttonIconElement = <FaSpaceShuttle className="mr-2 group-hover:text-white" />;
             break;
         default:
             buttonIconElement = null;
@@ -79,22 +77,21 @@ const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
 
     return (
         <motion.div 
-        className={cardClasses}
-        initial={{ opacity: 0,   }}
-        animate={{ opacity: 1, }}
-        transition={{ duration: 0.6, delay: 0.1}}
-        whileHover={{ scale: 1.05, backgroundColor: "#dddddd9a" }} // Cambia el valor de escala aquí y añade el cambio de color de fondo
-    >
+            className={cardClasses}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.1}}
+            whileHover={{ scale: 1.05 }} // Solo crece al hacer hover
+        >
             {iconElement}
             <div className= "px-6 py-4">
-                <div className="font-bold text-xl mb-2">{title}</div>
+                <div className="font-bold text-xl mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-white to-blue-600">{title}</div>                
                 <p className={paragraphClasses}>
                     {description}
                 </p>
-                
-                <button type="button" className="mt-4 border-r-2 border-blue-800 transform transition-transform hover:scale-110 hover:text-black font-bold py-2 px-4 rounded-xl inline-flex items-center">
-                {buttonIconElement}
-                {buttonText}
+                <button type="button" className="mt-4 border-r-2 border-blue-900 transform transition-transform hover:scale-110 group-hover:text-white font-bold py-2 px-4 rounded-xl inline-flex items-center">
+                    {buttonIconElement}
+                    {buttonText}
                 </button>
             </div>
         </motion.div>

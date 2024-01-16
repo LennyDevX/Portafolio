@@ -34,10 +34,10 @@ function App() {
                 <HeroSection />
             </div>
             <div ref={refSecondHero} style={{visibility: inViewSecondHero ? 'visible' : 'hidden'}}>
-                <SecondHero />
+                <ThirdHero />
             </div>
             <div ref={refThirdHero} style={{visibility: inViewThirdHero ? 'visible' : 'hidden'}}>
-                <ThirdHero />
+                <SecondHero />
             </div>
             <div ref={refCard} style={{visibility: inViewCard ? 'visible' : 'hidden'}}>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 ml-6 mt-6">

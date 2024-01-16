@@ -40,7 +40,8 @@ const Navbar = () => {
 
     const navClasses = classNames(
         'flex', 'items-center', 'justify-between', 'flex-wrap', 
-        'bg-black', 'bg-opacity-50', 'p-6', 'rounded-lg', 'shadow', 'text-white'
+        'p-6', 'rounded-lg', '', 'text-white', 'text-center',
+        
     );
 
     const buttonClasses = classNames(
@@ -51,7 +52,7 @@ const Navbar = () => {
     return (
         <nav className={navClasses}>
             <div className="flex items-center flex-shrink-0 mr-6">
-                <span className="font-semibold text-xl tracking-tight">LennyDevX</span>
+                <span className="font-semibold italic text-xl tracking-tight shadow-2xl">LennyDevX</span>
             </div>
             <div className="block lg:hidden">
                 <button onClick={toggleMenu} className={buttonClasses}>

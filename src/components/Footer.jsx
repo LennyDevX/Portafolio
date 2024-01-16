@@ -20,27 +20,27 @@ const Footer = () => {
             <div>
                 <ul className="space-y-3">
                     {['React.Doc', 'Next.JS', 'Vite'].map((enlace, index) => (
-                        <li key={index}><a href={links[enlace]} alt={`Ir a ${enlace}`} className="hover:underline" rel="noopener">{enlace}</a></li>
+                        <li key={index}><a href={links[enlace]} alt={`Ir a ${enlace}`} className="hover:underline" rel="noopener" target="_blank">{enlace}</a></li>
                     ))}
                 </ul>
             </div>
             <div>
                 <ul className="space-y-3">
                     {['About Sintetix', 'IA', 'Web'].map((enlace, index) => (
-                        <li key={index}><a href={links[enlace]} alt={`Ir a ${enlace}`} className="hover:underline" rel="noopener">{enlace}</a></li>
+                        <li key={index}><a href={links[enlace]} alt={`Ir a ${enlace}`} className="hover:underline" rel="noopener" target="_blank">{enlace}</a></li>
                     ))}
                 </ul>
             </div>
             <div>
                 <ul className="space-y-3 md:mt-0">
                     {['Copilot', 'Github Sintetix', 'Contacto'].map((enlace, index) => (
-                        <li key={index + 4}><a href={links[enlace]} alt={`Ir a ${enlace}`} className="hover:underline" rel="noopener">{enlace}</a></li>
+                        <li key={index + 4}><a href={links[enlace]} alt={`Ir a ${enlace}`} className="hover:underline" rel="noopener" target="_blank">{enlace}</a></li>
                     ))}
                 </ul>
             </div>
         
             <div className="col-span-full text-center md:mt-5 mt-7">
-                ©2024 Todos los derechos reservados.
+                ©2024 All rigths reserved. SintetixHub.com
                 <div className="mt-4">
                     <FontAwesomeIcon icon={faJsSquare} className="mx-2" />
                     <FontAwesomeIcon icon={faReact} className="mx-2" />

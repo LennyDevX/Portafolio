@@ -14,7 +14,7 @@ const HeroSection = () => {
     const [subIndex, setSubIndex] = useState(0);
     const [reverse, setReverse] = useState(false);
     const [textVisible, setTextVisible] = useState(false);
-    const text = ["Hello, I'm Lenny", "Developer UI/UX", "Minimalist First", "Awesomen Styles", "Apps and much more...", "How Can I Help You?"];
+    const text = ["Hello, I'm Lenny", "Developer UI/UX", "Minimalist First", "Awesomen Styles", "Apps and much more", "How Can I Help You?"];
 
     const timerId = useRef(null);
 
@@ -92,7 +92,7 @@ useEffect(() => {
                         Welcome to my digital world, explore my own Apps and webs! If you are looking for more, I invite you to explore the Blog section with more info.
                     </motion.p>
                     <motion.button
-                        className="hero-section-button mt-4 inline-block bg-black text-white hover:bg-blue py-3 px-5 rounded-xl transform transition-transform duration-300 hover:scale-110"
+                        className="hero-section-button mt-4 inline-block text-white  py-3 px-5 rounded-xl transform transition-transform duration-300 hover:scale-110"
                         title="Learn more about our daily motivation tips"
                         initial={{ opacity: 0, }} 
                         animate={{ opacity: 1, }} 
