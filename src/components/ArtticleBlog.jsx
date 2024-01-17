@@ -60,27 +60,25 @@ const ArticleBlog = () => {
                 {`${text[index].substring(0, subIndex)}${subIndex === text[index].length ? '_' : ''}`}
             </h1>
             <p className="text-lg mb-4 text-center mx-auto max-w-prose">
-                Bienvenidos a Sintetix, una innovadora aplicación web que combina lo mejor de los blogs y las redes sociales en una sola plataforma. <br/>
-                En Sintetix, los usuarios pueden leer y subir artículos, comentar en las publicaciones de otros y expresar su aprecio con un simple “like”.<br/><br/>
+                Welcome to Sintetix, an innovative web application that amalgamates the best of blogging and social networking into a single platform. At Sintetix, users can read and upload articles, engage in discussions, and express their appreciation with a simple "like".<br/><br/>
 
-                Pero eso no es todo, Sintetix es mucho más que una simple plataforma de blogging. <br/>
-                Sintetix se construye sobre una base sólida de tecnologías modernas y de vanguardia.<br/><br/>
+                But Sintetix is more than just a blogging platform. It's built on a robust foundation of cutting-edge, modern technologies.<br/><br/>
 
-                Utilizamos React para la interfaz de usuario. React es una biblioteca de JavaScript para construir interfaces de usuario. Proporciona una experiencia de usuario fluida y reactiva. Además, React nos permite crear componentes reutilizables, lo que facilita el mantenimiento y la escalabilidad de nuestra aplicación.<br/><br/>
+                We utilize React for our user interface. React is a JavaScript library renowned for building interactive user interfaces. It provides a seamless, responsive user experience. Moreover, React's component-based architecture facilitates maintainability and scalability of our application.<br/><br/>
 
-                Para los estilos, utilizamos Tailwind CSS, un marco de trabajo de bajo nivel que nos permite diseñar nuestras interfaces de usuario de forma eficiente y con un alto grado de personalización. Con Tailwind CSS, podemos crear diseños responsivos que se ven y funcionan bien en una variedad de dispositivos y tamaños de pantalla.<br/><br/>
+                For styling, we employ Tailwind CSS, a low-level utility-first framework that enables efficient and highly customizable UI design. With Tailwind CSS, we can create responsive designs that look and function well across a variety of devices and screen sizes.<br/><br/>
 
-                La lógica de la aplicación se maneja con JavaScript, el lenguaje de programación más popular para el desarrollo web. JavaScript nos permite crear interacciones dinámicas en el lado del cliente, mejorando la experiencia del usuario.<br/><br/>
+                The application logic is handled with JavaScript, the most popular programming language for web development. JavaScript allows us to create dynamic client-side interactions, enhancing the user experience.<br/><br/>
 
-                En el lado del servidor, utilizamos Express, un marco de trabajo minimalista y flexible para Node.js. Express nos proporciona las herramientas necesarias para construir nuestro servidor web y manejar las solicitudes HTTP.<br/><br/>
+                On the server-side, we use Express, a minimalist and flexible framework for Node.js. Express equips us with the necessary tools to build our web server and handle HTTP requests.<br/><br/>
 
-                Finalmente, para el despliegue de nuestra aplicación, utilizamos Vercel, una plataforma de despliegue en la nube que nos permite implementar nuestra aplicación de manera rápida y eficiente.<br/><br/>
+                Finally, for deployment, we use Vercel, a cloud deployment platform that allows us to implement our application swiftly and efficiently.<br/><br/>
 
-                Sintetix no es solo una plataforma de blogging, sino también una red social. Los usuarios pueden seguir a otros, interactuar con sus publicaciones y formar comunidades en torno a temas de interés común. Esto crea un ambiente dinámico y participativo donde los usuarios pueden compartir ideas, aprender de los demás y formar conexiones significativas.<br/><br/>
+                Sintetix is not just a blogging platform, but also a social network. Users can follow others, interact with their posts, and form communities around common interests. This fosters a dynamic and participatory environment where users can share ideas, learn from each other, and form meaningful connections.<br/><br/>
 
-                Nuestro objetivo con Sintetix es proporcionar una plataforma donde los usuarios puedan expresarse libremente, compartir sus pensamientos e ideas, y conectarse con otros que comparten sus intereses. Creemos que al combinar los aspectos de blogging y redes sociales, podemos crear una experiencia única y valiosa para nuestros usuarios.<br/><br/>
+                Our goal with Sintetix is to provide a platform where users can freely express themselves, share their thoughts and ideas, and connect with others who share their interests. We believe that by combining aspects of blogging and social networking, we can create a unique and valuable experience for our users.<br/><br/>
 
-                Esperamos que disfrutes de tu tiempo en Sintetix y estamos emocionados de ver lo que nuestra comunidad creará. ¡Bienvenido a Sintetix!
+                We hope you enjoy your time on Sintetix and we're excited to see what our community will create. Welcome to Sintetix!
             </p>
             <div className="flex space-x-4">
                 <button aria-label="Like" className="px-4 py-2 hover:text-red-500 bg-blue-500 text-white rounded flex items-center space-x-2 transition transform hover:scale-110">

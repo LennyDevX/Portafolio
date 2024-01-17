@@ -15,13 +15,13 @@ const Menu = ({ isOpen }) => {
         <div className={divClasses}>
             <div className="text-sm lg:flex-grow">
                 <a href="#responsive-header" className={linkClasses}>
-                    Servicios
+                    Services
                 </a>
                 <a href="#responsive-header" className={linkClasses}>
-                    Comunidad
+                    Community
                 </a>
                 <a href="#responsive-header" className={`${linkClasses} mr-0`}>
-                    Tecnologias
+                    Technologies
                 </a>
             </div>
         </div>

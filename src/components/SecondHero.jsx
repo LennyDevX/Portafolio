@@ -27,15 +27,7 @@ const SecondHero = () => {
                 </h1>
                 <p className="hero-section-paragraph mt-2 text-lg md:text-xl">
                     I am a developer with a passion for the world of technology. Currently, I am self-studying and have experience in the sales and business/marketing sector. I have worked on projects involving React, Next.js, Node.js, Express.js, MongoDB, and more. At present, I am collaborating with a group of developers on a project to create a blog platform for the software developer community. If you're interested in learning more about this project, feel free to visit our repository and join us on Discord. Don't forget to leave a star!                </p>
-                <motion.button
-                    className="hero-section-button mt-4 inline-block text-white  py-3 px-5 rounded-xl transform transition-transform duration-300 hover:scale-110"
-                    title="Learn more about our daily motivation tips"
-                    initial={{ opacity: 0, }} 
-                    animate={{ opacity: 1, }} 
-                    transition={{ duration: 1, delay: 1.5 }}
-                >
-                    Learn More
-                </motion.button>
+                
             </motion.div>
             <motion.div className="w-full md:w-1/2 ml-0 md:ml-2 mt-2 md:mt-4"
                 initial={{ opacity: 0,}} 

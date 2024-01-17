@@ -53,15 +53,7 @@ const ThirdHero = () => {
                     Bootstrap <FontAwesomeIcon icon={faBootstrap} className="mx-2" />
                     Tailwind CSS <FontAwesomeIcon icon={faPalette} className="mx-2" />
                 </p>
-                <motion.button
-                    className="hero-section-button mt-4 inline-block text-white  py-3 px-5 rounded-xl transform transition-transform duration-300 hover:scale-110"
-                    title="Learn more about our daily motivation tips"
-                    initial={{ opacity: 0, }} 
-                    animate={{ opacity: 1, }} 
-                    transition={{ duration: 1, delay: 1.5 }}
-                >
-                    Learn More
-                </motion.button>
+                
             </motion.div>
         </motion.div>
     );
