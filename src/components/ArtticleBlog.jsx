@@ -23,6 +23,10 @@ const ArticleBlog = () => {
     }, [longestText]);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
         if (index === text.length) return;
 
         if (subIndex === text[index].length+1 && 
@@ -52,7 +56,7 @@ const ArticleBlog = () => {
                 {`${text[index].substring(0, subIndex)}${subIndex === text[index].length ? '_' : ''}`}
             </h1>
             <p className="text-lg mb-4 text-center mx-auto max-w-prose">
-                Bienvenidos a Sintetix, una innovadora aplicación web que combina lo mejor de los blogs y las redes sociales en una sola plataforma. <br/>
+                TEST TEST TEST TEST Bienvenidos a Sintetix, una innovadora aplicación web que combina lo mejor de los blogs y las redes sociales en una sola plataforma. <br/>
                 En Sintetix, los usuarios pueden leer y subir artículos, comentar en las publicaciones de otros y expresar su aprecio con un simple “like”.<br/><br/>
 
                 Pero eso no es todo, Sintetix es mucho más que una simple plataforma de blogging. <br/>
