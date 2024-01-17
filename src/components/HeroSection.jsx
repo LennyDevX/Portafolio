@@ -61,15 +61,15 @@ useEffect(() => {
                         loading="lazy" 
                         width={image.width} 
                         height={image.height} 
-                        aria-label="Esta imagen es generada por IA / DALL-3" 
+                        aria-label="Esta imagen es generada por IA / DALL-E 3" 
                         
                         style={{ transform: 'translateX(0px)', opacity: 0 }} 
                         animate={{ transform: 'translateY(0px)', opacity: 1 }} 
                         initial={{ opacity: 0, y: 100 }} 
                         transition={{ duration: 0.8, delay: 0.5 }}
                     />
-                    <p className="hero-section-paragraph mt-2 text-xs md:text-sm italic">
-                        Made with DALL-3 AI
+                    <p className="hero-section-paragraph mt-2 text-2xs md:text-sm italic text-gray-600">
+                        Made with DALL-E 3 AI
                     </p>
                 </div>
             </div>

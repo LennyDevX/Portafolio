@@ -17,19 +17,6 @@ const SecondHero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
         >
-            <motion.div className="w-full md:w-1/2 ml-0 md:ml-2 mt-2 md:mt-4"
-                initial={{ opacity: 0,}} 
-                animate={{ opacity: 1, y: 0 }} 
-                transition={{ duration: 1 }}
-            >
-                <div className="w-2/4 md:w-full mx-auto md:max-w-sm items-center">
-                    <motion.img className="rounded-full" src={image.src} alt={image.alt} loading="lazy" width={image.width} height={image.height} 
-                        initial={{ opacity: 0, y: -100 }} 
-                        animate={{ opacity: 1, y: 0 }} 
-                        transition={{ duration: 1.5, delay: 0.5 }}
-                    />
-                </div>
-            </motion.div>
             <motion.div className="w-full md:w-1/2 text-center md:text-right mt-2 md:mt-4"
                 initial={{ opacity: 0, y: 100 }} 
                 animate={{ opacity: 1, y: 0}} 
@@ -50,6 +37,19 @@ const SecondHero = () => {
                 >
                     Learn More
                 </motion.button>
+            </motion.div>
+            <motion.div className="w-full md:w-1/2 ml-0 md:ml-2 mt-2 md:mt-4"
+                initial={{ opacity: 0,}} 
+                animate={{ opacity: 1, y: 0 }} 
+                transition={{ duration: 1 }}
+            >
+                <div className="w-2/4 md:w-full mx-auto md:max-w-sm items-center">
+                    <motion.img className="rounded-full" src={image.src} alt={image.alt} loading="lazy" width={image.width} height={image.height} 
+                        initial={{ opacity: 0, y: -100 }} 
+                        animate={{ opacity: 1, y: 0 }} 
+                        transition={{ duration: 1.5, delay: 0.5 }}
+                    />
+                </div>
             </motion.div>
         </motion.div>
     );
