@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useLocation, Link } from 'react-router-dom';
+import { FaHeart, FaGithub, FaDiscord, FaHome } from 'react-icons/fa';
 
 const ArticleBlog = () => {
     const location = useLocation();
@@ -26,7 +27,7 @@ const ArticleBlog = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    useEffect(() => {
+    const typingAnimation = useCallback(() => {
         if (index === text.length) return;
 
         if (subIndex === text[index].length+1 && 
@@ -44,11 +45,14 @@ const ArticleBlog = () => {
             return;
         }
 
-        setTimeout(() => {
-            setSubIndex((prev) => prev + (reverse ? -1 : 1));
-            setDelay(75); // normal typing speed
-        }, delay);
-    }, [subIndex, index, reverse, text, delay]);
+        setSubIndex((prev) => prev + (reverse ? -1 : 1));
+        setDelay(75); // normal typing speed
+    }, [subIndex, index, reverse, text]);
+
+    useEffect(() => {
+        const timer = setTimeout(typingAnimation, delay);
+        return () => clearTimeout(timer);
+    }, [typingAnimation, delay]);
 
     return (
         <div className="flex flex-col items-center justify-center p-10 m-10 rounded shadow-lg ">
@@ -56,7 +60,7 @@ const ArticleBlog = () => {
                 {`${text[index].substring(0, subIndex)}${subIndex === text[index].length ? '_' : ''}`}
             </h1>
             <p className="text-lg mb-4 text-center mx-auto max-w-prose">
-                TEST TEST TEST TEST Bienvenidos a Sintetix, una innovadora aplicación web que combina lo mejor de los blogs y las redes sociales en una sola plataforma. <br/>
+                Bienvenidos a Sintetix, una innovadora aplicación web que combina lo mejor de los blogs y las redes sociales en una sola plataforma. <br/>
                 En Sintetix, los usuarios pueden leer y subir artículos, comentar en las publicaciones de otros y expresar su aprecio con un simple “like”.<br/><br/>
 
                 Pero eso no es todo, Sintetix es mucho más que una simple plataforma de blogging. <br/>
@@ -79,9 +83,18 @@ const ArticleBlog = () => {
                 Esperamos que disfrutes de tu tiempo en Sintetix y estamos emocionados de ver lo que nuestra comunidad creará. ¡Bienvenido a Sintetix!
             </p>
             <div className="flex space-x-4">
-                <button className="px-4 py-2 bg-blue-500 text-white rounded">Like</button>
-                <button className="px-4 py-2 bg-black text-white rounded">GitHub</button>
-                <button className="px-4 py-2 bg-indigo-600 text-white rounded">Discord</button>
+                <button aria-label="Like" className="px-4 py-2 hover:text-red-500 bg-blue-500 text-white rounded flex items-center space-x-2 transition transform hover:scale-110">
+                    <FaHeart />
+                </button>
+                <a href="https://github.com/SintetixHub" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className=" hover:text-blue-300 px-4 py-2 bg-black text-white rounded flex items-center space-x-2 transition transform hover:scale-110">
+                    <FaGithub />
+                </a>
+                <a href="https://discord.gg/MceEbBjV" target="_blank" rel="noopener noreferrer" aria-label="Discord" className="px-4 py-2 bg-indigo-600 text-white rounded flex items-center space-x-2 transition transform hover:scale-110">
+                    <FaDiscord />
+                </a>
+                <Link to="/" aria-label="Home" className="px-4 py-2 bg-red-800 text-white rounded flex items-center space-x-2 transition transform hover:scale-110">
+                    <FaHome />
+                </Link>
             </div>
         </div>
     );

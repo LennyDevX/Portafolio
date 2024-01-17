@@ -42,6 +42,10 @@ const HeroSection = () => {
         return () => clearTimeout(timerId.current);
     }, [subIndex, index, reverse, text]);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     // Efecto para mostrar los textos después de que la imagen haya terminado de animarse
     useEffect(() => {
         const timeout = setTimeout(() => {
