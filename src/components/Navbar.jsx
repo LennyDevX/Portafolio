@@ -18,9 +18,6 @@ const Menu = ({ isOpen }) => {
                     Servicios
                 </a>
                 <a href="#responsive-header" className={linkClasses}>
-                    Blog
-                </a>
-                <a href="#responsive-header" className={linkClasses}>
                     Comunidad
                 </a>
                 <a href="#responsive-header" className={`${linkClasses} mr-0`}>

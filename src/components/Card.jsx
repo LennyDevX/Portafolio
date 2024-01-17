@@ -84,7 +84,7 @@ const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
                         {description}
                     </p>
                     <Link to="/blog/under-hood">
-                    <button type="button" className="mt-4 border-r-2 border-blue-900 transform transition-transform hover:scale-110 group-hover:text-white font-bold py-2 px-4 rounded-xl inline-flex items-center">
+                    <button type="button" className=" text-white mt-4 border-r-2 border-blue-900 transform transition-transform hover:scale-110 group-hover:text-white font-bold py-2 px-4 rounded-xl inline-flex items-center">
                         {buttonIconElement}
                         {buttonText}
                     </button>
