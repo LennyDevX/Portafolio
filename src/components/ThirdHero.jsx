@@ -42,8 +42,7 @@ const ThirdHero = () => {
                     Skill Lenguaje Programing
                 </h1>
                 <p className="hero-section-paragraph mt-3 text-lg md:text-xl">
-                        This website is built with many of these technologies, I can create components and style with Tailwind CSS, Bootstrap and other libraries. I have over 2 years of experience with all these tools, I am capable of developing minimalist and powerful web interfaces.
-                    </p>
+                        This website showcases my proficiency in various technologies. With over 2 years of experience, I've honed my skills in creating components and styling with Tailwind CSS, Bootstrap, and other libraries. My expertise lies in developing minimalist yet powerful web interfaces.                    </p>
                     <br/>
                 <p className="hero-section-paragraph  text-lg md:text-xl">
                     React <FontAwesomeIcon icon={faReact} className="mx-2" />

@@ -30,28 +30,29 @@ function App() {
                         <div ref={refHeroSection} style={{visibility: inViewHeroSection ? 'visible' : 'hidden'}}>
                             <HeroSection />
                         </div>
-                        <SecondHero />
                         <ThirdHero />
+                        <SecondHero />
+
                         <div ref={refCard} style={{visibility: inViewCard ? 'visible' : 'hidden'}}>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 ml-6 mt-6">
                                 <Card 
                                     icon="briefcase"
                                     title="Products" 
-                                    description="Here you can see my apps and new releases, where I upload everything I work on to my repository. From React as my favorite interface library to Next.js and TypeScript for more robust and scalable apps. Learn more about my work and if you see something you like, don't forget to leave a star. Any contributions to the repositories are welcome" 
+                                    description="Explore my diverse portfolio of applications and new releases. I leverage React, Next.js, and TypeScript to build robust, scalable solutions. Feel free to contribute and don't forget to leave a star if you appreciate my work." 
                                     buttonText="GitHub" 
                                     buttonIcon ="github"                       
                                 />
                                 <Card 
                                     icon="building"
                                     title="Enterprise" 
-                                    description="Here is an organization on Github where I colaborate with others developers, we are working on a project to create a platform for the sale of products and services Apps, where we will use the MERN stack, if you want to know more about the project, you can visit the repository and leave a star"
+                                    description="I collaborate with a team of developers on a blog platform for the tech community. Visit our repository to learn more and collaborate with us, and don't forget to leave a star." 
                                     buttonText="Discord" 
                                     buttonIcon ="discord"                       
                                 />
                                 <Card 
                                     icon="microchip"
                                     title="Under-Hood" 
-                                    description="Know the technologies that I use to develop my projects, from the frontend to the backend, I use the MERN stack, I also use other technologies such as Bootstrap, Tailwind CSS, Material UI, etc. Discovery the way that you also can do apps like Sintetix " 
+                                    description="Discover the technologies I use, from frontend to backend. I primarily use the MERN stack, along with Bootstrap, Tailwind CSS, Material UI, and more. Learn how you can also create applications like Sintetix." 
                                     buttonText="Learn More" 
                                     buttonIcon ="rocket"                       
                                 />

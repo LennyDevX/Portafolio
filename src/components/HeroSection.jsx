@@ -14,7 +14,7 @@ const HeroSection = () => {
     const [subIndex, setSubIndex] = useState(0);
     const [reverse, setReverse] = useState(false);
     const [textVisible, setTextVisible] = useState(false);
-    const text = ["Developer UI/UX", "Community manager", "I make Webs & Apps", "Very Powerfull and fluid", "Nice to see you again!", "How Can I Help You?"];
+    const text = ["Developer UI/UX", "Community manager", "Prompt Engineer",  "How Can I Help You?"];
 
     const timerId = useRef(null);
 
@@ -110,7 +110,7 @@ const HeroSection = () => {
                         animate={{ opacity: 1, }} 
                         transition={{ duration: 1, delay: 1.5 }}
                     >
-                        Learn More
+                        Hire me!
                     </motion.button>
                 </div>
             )}
