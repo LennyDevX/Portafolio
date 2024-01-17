@@ -5,6 +5,7 @@ import { FaGithub, FaDiscord, FaSpaceShuttle } from 'react-icons/fa';
 import { faHandshake, faMicrochip, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import '../assets/Card.css' // Asegúrate de importar el archivo CSS
 
 const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
@@ -76,25 +77,27 @@ const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
     }
 
     return (
-        <motion.div 
-            className={cardClasses}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.1}}
-            whileHover={{ scale: 1.05 }} // Solo crece al hacer hover
-        >
-            {iconElement}
-            <div className= "px-6 py-4">
-                <div className="font-bold text-xl mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-white to-blue-600">{title}</div>                
-                <p className={paragraphClasses}>
-                    {description}
-                </p>
-                <button type="button" className="mt-4 border-r-2 border-blue-900 transform transition-transform hover:scale-110 group-hover:text-white font-bold py-2 px-4 rounded-xl inline-flex items-center">
-                    {buttonIconElement}
-                    {buttonText}
-                </button>
-            </div>
-        </motion.div>
+        <Link to="/blog/under-hood">
+            <motion.div 
+                className={cardClasses}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.1}}
+                whileHover={{ scale: 1.05 }} // Solo crece al hacer hover
+            >
+                {iconElement}
+                <div className= "px-6 py-4">
+                    <div className="font-bold text-xl mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-white to-blue-600">{title}</div>                
+                    <p className={paragraphClasses}>
+                        {description}
+                    </p>
+                    <button type="button" className="mt-4 border-r-2 border-blue-900 transform transition-transform hover:scale-110 group-hover:text-white font-bold py-2 px-4 rounded-xl inline-flex items-center">
+                        {buttonIconElement}
+                        {buttonText}
+                    </button>
+                </div>
+            </motion.div>
+        </Link>
     );
 };
 

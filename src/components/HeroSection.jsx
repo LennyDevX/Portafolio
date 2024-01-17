@@ -14,33 +14,33 @@ const HeroSection = () => {
     const [subIndex, setSubIndex] = useState(0);
     const [reverse, setReverse] = useState(false);
     const [textVisible, setTextVisible] = useState(false);
-    const text = ["Hello, I'm Lenny", "Developer UI/UX", "Minimalist First", "Awesomen Styles", "Apps and much more", "How Can I Help You?"];
+    const text = ["Developer UI/UX", "Community manager", "I make Webs & Apps", "Very Powerfull and fluid", "Nice to see you again!", "How Can I Help You?"];
 
     const timerId = useRef(null);
 
-// Efecto de escritura
-useEffect(() => {
-    if (index === text.length) return;
+    // Efecto de escritura
+    useEffect(() => {
+        if (index === text.length) return;
 
-    if (subIndex === text[index].length+1 && 
-        index !== text.length-1 && 
-        !reverse ) {
-        setReverse(true);
-        return;
-    }
+        if (subIndex === text[index].length+1 && 
+            index !== text.length-1 && 
+            !reverse ) {
+            setReverse(true);
+            return;
+        }
 
-    if (subIndex === 0 && reverse) {
-        setReverse(false);
-        setIndex((prev) => prev + 1);
-        return;
-    }
+        if (subIndex === 0 && reverse) {
+            setReverse(false);
+            setIndex((prev) => prev + 1);
+            return;
+        }
 
-    timerId.current = setTimeout(() => {
-        setSubIndex((prev) => prev + (reverse ? -1 : 1));
-    }, 75);
+        timerId.current = setTimeout(() => {
+            setSubIndex((prev) => prev + (reverse ? -1 : 1));
+        }, 75);
 
-    return () => clearTimeout(timerId.current);
-}, [subIndex, index, reverse, text]);
+        return () => clearTimeout(timerId.current);
+    }, [subIndex, index, reverse, text]);
 
     // Efecto para mostrar los textos después de que la imagen haya terminado de animarse
     useEffect(() => {
@@ -81,8 +81,16 @@ useEffect(() => {
                         animate={{ opacity: 1, y: 0 }} 
                         transition={{ duration: 1.5 }}
                     >
-                        {`${text[index].substring(0, subIndex)}${subIndex === text[index].length ? '_' : ''}`}
+                        Hello, I'm Lenny
                     </motion.h1>
+                    <motion.h2 
+                        className="hero-section-title text-3xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-white to-blue-600 min-h-[3.5rem] md:min-h-[4.5rem]"
+                        initial={{ opacity: 0, y: -100 }} 
+                        animate={{ opacity: 1, y: 0 }} 
+                        transition={{ duration: 1.5 }}
+                    >
+                        {`${text[index].substring(0, subIndex)}${subIndex === text[index].length ? '_' : ''}`}
+                    </motion.h2>
                     <motion.p 
                         className="hero-section-paragraph mt-2 text-lg md:text-xl"
                         initial={{ opacity: 0, y: -100 }} 
