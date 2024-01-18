@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion'
-import { useRef } from 'react';
 
 const HeroSection = () => {
     const image = {
@@ -11,46 +10,35 @@ const HeroSection = () => {
     };
 
     const [index, setIndex] = useState(0);
-    const [subIndex, setSubIndex] = useState(0);
-    const [reverse, setReverse] = useState(false);
     const [textVisible, setTextVisible] = useState(false);
     const text = ["Developer UI/UX", "Community manager", "Prompt Engineer",  "How Can I Help You?"];
-
-    const timerId = useRef(null);
-
-    // Efecto de escritura
-    useEffect(() => {
-        if (index === text.length) return;
-
-        if (subIndex === text[index].length+1 && 
-            index !== text.length-1 && 
-            !reverse ) {
-            setReverse(true);
-            return;
-        }
-
-        if (subIndex === 0 && reverse) {
-            setReverse(false);
-            setIndex((prev) => prev + 1);
-            return;
-        }
-
-        timerId.current = setTimeout(() => {
-            setSubIndex((prev) => prev + (reverse ? -1 : 1));
-        }, 75);
-
-        return () => clearTimeout(timerId.current);
-    }, [subIndex, index, reverse, text]);
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
+    // Efecto de escritura
+    const [visibleText, setVisibleText] = useState('');
+
+    const animateText = useCallback(() => {
+        if (visibleText.length < text[index].length) {
+            setVisibleText(text[index].slice(0, visibleText.length + 1));
+        } else if (index < text.length - 1) {
+            setVisibleText('');
+            setIndex(index + 1);
+        }
+    }, [visibleText, text, index]);
+
+    useEffect(() => {
+        const timer = setInterval(animateText, 70);
+        return () => clearInterval(timer);
+    }, [animateText]);
+
     // Efecto para mostrar los textos después de que la imagen haya terminado de animarse
     useEffect(() => {
         const timeout = setTimeout(() => {
             setTextVisible(true);
-        }, 500); // Duración de la animación de la imagen
+        }, 300); // Duración de la animación de la imagen
 
         return () => clearTimeout(timeout);
     }, []);
@@ -93,7 +81,7 @@ const HeroSection = () => {
                         animate={{ opacity: 1, y: 0 }} 
                         transition={{ duration: 1.5 }}
                     >
-                        {`${text[index].substring(0, subIndex)}${subIndex === text[index].length ? '_' : ''}`}
+                        {visibleText}
                     </motion.h2>
                     <motion.p 
                         className="hero-section-paragraph mt-2 text-lg md:text-xl"

@@ -5,7 +5,6 @@ import { FaHeart, FaGithub, FaDiscord, FaHome } from 'react-icons/fa';
 const ArticleBlog = () => {
     const location = useLocation();
     const query = new URLSearchParams(location.search);
-    const underHood = query.get('under-hood');
 
     const [index, setIndex] = useState(0);
     const [subIndex, setSubIndex] = useState(0);
@@ -34,26 +33,25 @@ const ArticleBlog = () => {
             index !== text.length-1 && 
             !reverse ) {
             setReverse(true);
-            setDelay(500); // reduced delay before starting to delete
+            setDelay(200); // reduced delay before starting to delete
             return;
         }
 
         if (subIndex === 0 && reverse) {
             setReverse(false);
             setIndex((prev) => prev + 1);
-            setDelay(500); // reduced delay before starting to type
+            setDelay(200); // reduced delay before starting to type
             return;
         }
 
         setSubIndex((prev) => prev + (reverse ? -1 : 1));
-        setDelay(75); // normal typing speed
+        setDelay(50); // normal typing speed
     }, [subIndex, index, reverse, text]);
 
     useEffect(() => {
         const timer = setTimeout(typingAnimation, delay);
         return () => clearTimeout(timer);
     }, [typingAnimation, delay]);
-
     return (
         <div className="flex flex-col items-center justify-center p-10 m-10 rounded shadow-lg ">
             <h1 ref={titleRef} className="hero-section-title text-center text-3xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-white to-blue-600 min-h-[3.5rem] md:min-h-[4.5rem]">
