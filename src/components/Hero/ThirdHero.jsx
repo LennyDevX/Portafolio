@@ -38,7 +38,7 @@ const ThirdHero = () => {
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ duration: 0.5, delay: 0.5 }}
             >
-                <h1 className="hero-section-title text-4xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-white to-blue-600 min-h-[3.5rem] md:min-h-[4.5rem]">
+                <h1 className="hero-section-title text-4xl md:text-6xl bg-clip-text text-blue-100 min-h-[3.5rem] md:min-h-[4.5rem]">
                     Skill Lenguaje Programing
                 </h1>
                 <p className="hero-section-paragraph mt-3 text-lg md:text-xl">

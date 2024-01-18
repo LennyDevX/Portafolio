@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
     const image = {
@@ -68,12 +69,12 @@ const HeroSection = () => {
             {textVisible && (
                 <div className="w-full md:w-1/2 text-center md:text-left mt-2 md:mt-4">
                     <motion.h1 
-                        className="hero-section-title text-4xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-white to-blue-600 min-h-[3.5rem] md:min-h-[4.5rem]"
+                        className="hero-section-title text-4xl md:text-6xl bg-clip-text text-White min-h-[3.5rem] md:min-h-[4.5rem]"
                         initial={{ opacity: 0, y: -100 }} 
                         animate={{ opacity: 1, y: 0 }} 
                         transition={{ duration: 1.5 }}
                     >
-                        Hello, I'm Lenny
+                        Hello, I'm Lenny 🪄
                     </motion.h1>
                     <motion.h2 
                         className="hero-section-title text-3xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-white to-blue-600 min-h-[3.5rem] md:min-h-[4.5rem]"
@@ -91,6 +92,7 @@ const HeroSection = () => {
                     >
                         Welcome to my digital world, explore my own Apps and webs! If you are looking for more, I invite you to explore the Blog section with more info.
                     </motion.p>
+                    <Link to ="/hire">
                     <motion.button
                         className="hero-section-button mt-4 inline-block text-white  py-3 px-5 rounded-xl transform transition-transform duration-300 hover:scale-110"
                         title="Learn more about our daily motivation tips"
@@ -100,6 +102,7 @@ const HeroSection = () => {
                     >
                         Hire me!
                     </motion.button>
+                    </Link>
                 </div>
             )}
         </div>

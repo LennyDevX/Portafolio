@@ -6,7 +6,6 @@ import { faHandshake, faMicrochip, faBriefcase } from '@fortawesome/free-solid-s
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import '../assets/Card.css' // Asegúrate de importar el archivo CSS
 
 const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
     const [isClient, setIsClient] = useState(false);

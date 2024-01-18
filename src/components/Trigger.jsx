@@ -1,13 +1,14 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HeroSection from './HeroSection.jsx';
-import Navbar from './Navbar.jsx';
-import SecondHero from './SecondHero.jsx';
-import ThirdHero from './ThirdHero.jsx';
-import Card from './Card.jsx';
-import Footer from './Footer.jsx';
-import ArticleBlog from './ArtticleBlog';
+import HeroSection from './Hero/HeroSection.jsx';
+import Navbar from './Header/Navbar.jsx'; 
+import SecondHero from './Hero/SecondHero.jsx';
+import ThirdHero from './Hero/ThirdHero.jsx';
+import Card from './Header/Card.jsx';
+import Footer from './Footer/Footer.jsx';
+import ArticleBlog from './ArticleBlog/ArtticleBlog.jsx';
+import HirePage from './pages/HirePage.jsx';
 
 function App() {
     const [refHeroSection, inViewHeroSection] = useInView({
@@ -64,6 +65,7 @@ function App() {
                     </>
                 }/>
                 <Route path="/blog/:id" element={<ArticleBlog />} />
+                <Route path="/hire" element={<HirePage />} />            
             </Routes>
         </Router>
     );
