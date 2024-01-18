@@ -5,10 +5,10 @@ import HeroSection from './Hero/HeroSection.jsx';
 import Navbar from './Header/Navbar.jsx'; 
 import SecondHero from './Hero/SecondHero.jsx';
 import ThirdHero from './Hero/ThirdHero.jsx';
-import Card from './Header/Card.jsx';
+import Card from    './Card/CardHire.jsx';
 import Footer from './Footer/Footer.jsx';
-import ArticleBlog from './ArticleBlog/ArtticleBlog.jsx';
-import HirePage from './pages/HirePage.jsx';
+import ArticleBlog from './pages/ArtticleBlog.jsx';
+import HirePage from './pages/HirePage.jsx'; 
 
 function App() {
     const [refHeroSection, inViewHeroSection] = useInView({

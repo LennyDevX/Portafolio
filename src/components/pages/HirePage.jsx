@@ -1,7 +1,7 @@
 // HirePage.jsx
 import React from 'react';
 import HireSection from '../Hero/HireSection.jsx';
-import CardHire from '../Header/CardHire.jsx';
+import CardHire from '../Card/CardHire.jsx';
 
 const HirePage = () => {
     return (
