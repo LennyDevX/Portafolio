@@ -5,7 +5,7 @@ import HeroSection from './Hero/HeroSection.jsx';
 import Navbar from './Header/Navbar.jsx'; 
 import SecondHero from './Hero/SecondHero.jsx';
 import ThirdHero from './Hero/ThirdHero.jsx';
-import Card from    './Card/CardHire.jsx';
+import Card from    './Card/Card.jsx';
 import Footer from './Footer/Footer.jsx';
 import ArticleBlog from './pages/ArtticleBlog.jsx';
 import HirePage from './pages/HirePage.jsx'; 
@@ -36,8 +36,8 @@ function App() {
 
                         <div ref={refCard} style={{visibility: inViewCard ? 'visible' : 'hidden'}}>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 ml-6 mt-6">
-                                <Card 
-                                    icon="briefcase"
+                            <Card 
+                                    icon="briefcase" 
                                     title="Products" 
                                     description="Explore my diverse portfolio of applications and new releases. I leverage React, Next.js, and TypeScript to build robust, scalable solutions. Feel free to contribute and don't forget to leave a star if you appreciate my work." 
                                     buttonText="GitHub" 

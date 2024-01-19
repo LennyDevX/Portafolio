@@ -96,15 +96,7 @@ const HireSection = () => {
                         If you're looking for a programmer who combines technical skills with a customer-focused approach, look no further.<br /> I'm here to turn your digital ideas into reality.
                         </motion.p>
 
-                        <motion.button
-                        className="hero-section-button mt-4 inline-block text-white  py-3 px-5 rounded-xl transform transition-transform duration-300 hover:scale-110"
-                        title="Learn more about our daily motivation tips"
-                        initial={{ opacity: 0, }} 
-                        animate={{ opacity: 1, }} 
-                        transition={{ duration: 1, delay: 1.5 }}
-                    >
-                        Request a service
-                    </motion.button>
+                        
                     
                 </div>
             )}
