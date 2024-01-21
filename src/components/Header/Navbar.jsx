@@ -18,10 +18,9 @@ const Navbar = () => {
 
     return (
         <nav className={navClasses}>
-            <div className="flex items-center flex-shrink-0 mr-6">
+            <div className="flex flex-shrink-0 mr-6">
                 <Link to="/" className="font-semibold italic text-xl tracking-tight text-white">LennyDevX</Link>
-                <div className="text-right text-green-700 ml-5">V 1.0</div>
-
+                <div className="text-left text-green-700 ml-5">V 1.5</div>
             </div>
             <div className="block lg:hidden">
                 <button onClick={toggleMenu} className={buttonClasses}>
@@ -36,11 +35,10 @@ const Navbar = () => {
     );
 };
 
-
 const Menu = ({ isOpen }) => {
     const divClasses = classNames(
-        isOpen ? 'block' : 'hidden', 'w-full', 'block', 'flex-grow', 
-        'lg:flex', 'lg:items-center', 'lg:w-auto'
+        isOpen ? 'block' : 'hidden', 'w-full', 'block', 
+        'lg:flex', 'lg:items-center', 'lg:w-auto', 'lg:justify-end justify-end'
     );
 
     const linkClasses = classNames(
