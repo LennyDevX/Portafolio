@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { FaHeart, FaGithub, FaDiscord, FaHome } from 'react-icons/fa';
 
@@ -6,11 +6,7 @@ const ArticleBlog = () => {
     const location = useLocation();
     const query = new URLSearchParams(location.search);
 
-    const [index, setIndex] = useState(0);
-    const [subIndex, setSubIndex] = useState(0);
-    const [reverse, setReverse] = useState(false);
-    const [delay, setDelay] = useState(75);
-    const text = ["Welcome To Sintetix", "Explore how Sintetix works"];
+    const text = ["Welcome To Sintetix"];
 
     const longestText = text.reduce((a, b) => a.length > b.length ? a : b);
     const titleRef = useRef(null);
@@ -26,36 +22,10 @@ const ArticleBlog = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const typingAnimation = useCallback(() => {
-        if (index === text.length) return;
-
-        if (subIndex === text[index].length+1 && 
-            index !== text.length-1 && 
-            !reverse ) {
-            setReverse(true);
-            setDelay(200); // reduced delay before starting to delete
-            return;
-        }
-
-        if (subIndex === 0 && reverse) {
-            setReverse(false);
-            setIndex((prev) => prev + 1);
-            setDelay(200); // reduced delay before starting to type
-            return;
-        }
-
-        setSubIndex((prev) => prev + (reverse ? -1 : 1));
-        setDelay(50); // normal typing speed
-    }, [subIndex, index, reverse, text]);
-
-    useEffect(() => {
-        const timer = setTimeout(typingAnimation, delay);
-        return () => clearTimeout(timer);
-    }, [typingAnimation, delay]);
     return (
         <div className="flex flex-col items-center justify-center p-10 m-10 rounded shadow-lg ">
             <h1 ref={titleRef} className="hero-section-title text-center text-3xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-white to-blue-600 min-h-[3.5rem] md:min-h-[4.5rem]">
-                {`${text[index].substring(0, subIndex)}${subIndex === text[index].length ? '_' : ''}`}
+                {text[0]}
             </h1>
             <p className="text-lg mb-4 text-center mx-auto max-w-prose">
                 Welcome to Sintetix, an innovative web application that amalgamates the best of blogging and social networking into a single platform. At Sintetix, users can read and upload articles, engage in discussions, and express their appreciation with a simple "like".<br/><br/>

@@ -4,7 +4,7 @@ import { faReact, faJsSquare, faCss3Alt } from '@fortawesome/free-brands-svg-ico
 
 const Footer = () => {
     const links = {
-        'React Documentation': 'https://reactjs.org/docs/getting-started.html',
+        'React Documentation': 'https://react.dev/learn',
         'Next.js Documentation': 'https://nextjs.org/docs',
         'Vite Documentation': 'https://vitejs.dev/guide/',
         'Node.js Documentation': 'https://nodejs.org/en/docs/',
@@ -12,10 +12,10 @@ const Footer = () => {
         'MongoDB Documentation': 'https://docs.mongodb.com/',
         'About Sintetix': 'https://sintetixhub.com/about',
         'GitHub Copilot': 'https://copilot.github.com/',
-        'Sintetix on GitHub': 'https://github.com/SintetixHub/sintetix',
+        'Umbrella App': 'https://umbrella-app-ejqq.vercel.app/',
         'Contact': 'https://sintetixhub.com/contact',
-        'Twitter': 'https://twitter.com/YourTwitterHandle',
-        'LinkedIn': 'https://www.linkedin.com/in/YourLinkedInProfile/'
+        'Twitter': 'https://twitter.com/lennych_nft',
+        'LinkedIn': 'https://www.linkedin.com/in/lenny-mercado-valdez-330643141/'
     };
 
     return (
@@ -29,7 +29,7 @@ const Footer = () => {
             </div>
             <div>
                 <ul className="space-y-3">
-                    {['About Sintetix', 'GitHub Copilot', 'Sintetix on GitHub'].map((enlace, index) => (
+                    {['About Sintetix', 'GitHub Copilot', 'Umbrella App'].map((enlace, index) => (
                         <li key={index}><a href={links[enlace]} alt={`Go to ${enlace}`} className="hover:underline" rel="noopener noreferrer" target="_blank">{enlace}</a></li>
                     ))}
                 </ul>
