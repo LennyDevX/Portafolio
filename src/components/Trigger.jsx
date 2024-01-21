@@ -58,7 +58,8 @@ function App() {
                                     title="Under-Hood" 
                                     description="Discover the technologies I use, from frontend to backend. I primarily use the MERN stack, along with Bootstrap, Tailwind CSS, Material UI, and more. Learn how you can also create applications like Sintetix." 
                                     buttonText="Learn More" 
-                                    buttonIcon ="rocket"                       
+                                    buttonIcon ="rocket" 
+                                    buttonLink='/hire'                      
                                 />
                             </div>
                         </div>
