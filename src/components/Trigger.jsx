@@ -47,7 +47,7 @@ function App() {
                                 <Card 
                                     icon="building"
                                     title="Enterprise" 
-                                    description="I collaborate with a team of developers on a blog platform for the tech community. Visit our repository to learn more and collaborate with us, and don't forget to leave a star." 
+                                    description="I collaborate with a team of developers on a blog platform for the tech community. Visit our repository to learn more and collaborate with us, join us on Discord." 
                                     buttonText="Discord" 
                                     buttonIcon ="discord"  
                                     buttonLink='https://discord.gg/c252kH9v'
@@ -59,7 +59,7 @@ function App() {
                                     description="Discover the technologies I use, from frontend to backend. I primarily use the MERN stack, along with Bootstrap, Tailwind CSS, Material UI, and more. Learn how you can also create applications like Sintetix." 
                                     buttonText="Learn More" 
                                     buttonIcon ="rocket" 
-                                    buttonLink='/hire'                      
+                                    buttonLink='/blog'                      
                                 />
                             </div>
                         </div>
@@ -68,7 +68,7 @@ function App() {
                         </div>
                     </>
                 }/>
-                <Route path="/blog/:id" element={<ArticleBlog />} />
+                <Route path="/blog" element={<ArticleBlog />} />
                 <Route path="/hire" element={<HirePage />} />            
             </Routes>
         </Router>

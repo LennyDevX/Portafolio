@@ -25,6 +25,10 @@ const HeroSection = () => {
         return () => clearInterval(interval);
     }, [changeTitle]);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <motion.div className="max-w-7xl mx-auto hero-section flex flex-col md:flex-row items-center justify-center px-2 md:px-4 mt-2 md:mt-4"
             initial={{ opacity: 0 }}
