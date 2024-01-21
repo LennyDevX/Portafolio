@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import DailyMotivation from '../../public/DailyMotivation1.png';
+import DailyMotivation from '/DailyMotivation1.png';
 
 const SecondHero = () => {
     const image = {
@@ -12,7 +12,7 @@ const SecondHero = () => {
     };
 
     return (
-        <motion.div className="hero-section flex flex-col md:flex-row-reverse items-center justify-center px-2 md:px-4 mt-2 md:mt-4"
+        <motion.div className="max-w-7xl mx-auto hero-section flex flex-col md:flex-row-reverse items-center justify-center px-2 md:px-4 mt-2 md:mt-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -22,21 +22,12 @@ const SecondHero = () => {
                 animate={{ opacity: 1, y: 0}} 
                 transition={{ duration: 0.5, delay: 0.5 }}
             >
-                <h1 className="hero-section-title text-4xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-white to-blue-600 min-h-[3.5rem] md:min-h-[4.5rem]">
-                    Stay motivated, Every day, With our daily tips
+                <h1 className="hero-section-title text-4xl md:text-6xl bg-clip-text text-blue-100 min-h-[3.5rem] md:min-h-[4.5rem]">
+                    A little bit about me
                 </h1>
                 <p className="hero-section-paragraph mt-2 text-lg md:text-xl">
-                    Welcome to our daily motivation tips. Stay motivated every day!
-                </p>
-                <motion.button
-                    className="hero-section-button mt-4 inline-block text-white  py-3 px-5 rounded-xl transform transition-transform duration-300 hover:scale-110"
-                    title="Learn more about our daily motivation tips"
-                    initial={{ opacity: 0, }} 
-                    animate={{ opacity: 1, }} 
-                    transition={{ duration: 1, delay: 1.5 }}
-                >
-                    Learn More
-                </motion.button>
+                    I am a developer with a passion for the world of technology. Currently, I am self-studying and have experience in the sales and business/marketing sector. I have worked on projects involving React, Next.js, Node.js, Express.js, MongoDB, and more. At present, I am collaborating with a group of developers on a project to create a blog platform for the software developer community. If you're interested in learning more about this project, feel free to visit our repository and join us on Discord. Don't forget to leave a star!                </p>
+                
             </motion.div>
             <motion.div className="w-full md:w-1/2 ml-0 md:ml-2 mt-2 md:mt-4"
                 initial={{ opacity: 0,}} 

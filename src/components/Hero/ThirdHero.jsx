@@ -15,7 +15,7 @@ const ThirdHero = () => {
     };
 
     return (
-        <motion.div className="hero-section flex flex-col md:flex-row-reverse items-center justify-center px-2 md:px-4 mt-2 md:mt-4"
+        <motion.div className="max-w-7xl mx-auto hero-section flex flex-col md:flex-row-reverse items-center justify-center px-2 md:px-4 mt-2 md:mt-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -38,12 +38,11 @@ const ThirdHero = () => {
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ duration: 0.5, delay: 0.5 }}
             >
-                <h1 className="hero-section-title text-4xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-white to-blue-600 min-h-[3.5rem] md:min-h-[4.5rem]">
+                <h1 className="hero-section-title text-4xl md:text-6xl bg-clip-text text-blue-100 min-h-[3.5rem] md:min-h-[4.5rem]">
                     Skill Lenguaje Programing
                 </h1>
                 <p className="hero-section-paragraph mt-3 text-lg md:text-xl">
-                        This website is built with many of these technologies, I can create components and style with Tailwind CSS, Bootstrap and other libraries. I have over 2 years of experience with all these tools, I am capable of developing minimalist and powerful web interfaces.
-                    </p>
+                        This website showcases my proficiency in various technologies. With over 2 years of experience, I've honed my skills in creating components and styling with Tailwind CSS, Bootstrap, and other libraries. My expertise lies in developing minimalist yet powerful web interfaces.                    </p>
                     <br/>
                 <p className="hero-section-paragraph  text-lg md:text-xl">
                     React <FontAwesomeIcon icon={faReact} className="mx-2" />
@@ -54,15 +53,7 @@ const ThirdHero = () => {
                     Bootstrap <FontAwesomeIcon icon={faBootstrap} className="mx-2" />
                     Tailwind CSS <FontAwesomeIcon icon={faPalette} className="mx-2" />
                 </p>
-                <motion.button
-                    className="hero-section-button mt-4 inline-block text-white  py-3 px-5 rounded-xl transform transition-transform duration-300 hover:scale-110"
-                    title="Learn more about our daily motivation tips"
-                    initial={{ opacity: 0, }} 
-                    animate={{ opacity: 1, }} 
-                    transition={{ duration: 1, delay: 1.5 }}
-                >
-                    Learn More
-                </motion.button>
+                
             </motion.div>
         </motion.div>
     );

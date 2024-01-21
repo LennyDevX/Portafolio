@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaGithub, FaDiscord, FaSpaceShuttle } from 'react-icons/fa';
@@ -6,7 +6,6 @@ import { faHandshake, faMicrochip, faBriefcase } from '@fortawesome/free-solid-s
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import '../assets/Card.css' // Asegúrate de importar el archivo CSS
 
 const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
     const [isClient, setIsClient] = useState(false);
@@ -14,6 +13,32 @@ const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
     useEffect(() => {
         setIsClient(true);
     }, []);
+
+    const iconElement = useMemo(() => {
+        switch (icon) {
+            case 'building':
+                return <FontAwesomeIcon icon={faHandshake} size="3x" className="block mx-auto mb-4 group-hover:text-white" />;
+            case 'briefcase':
+                return <FontAwesomeIcon icon={faBriefcase} size="3x" className="block mx-auto mb-4 group-hover:text-white" />;
+            case 'microchip':
+                return <FontAwesomeIcon icon={faMicrochip} size="3x" className="block mx-auto mb-4 group-hover:text-white" />;
+            default:
+                return null;
+        }
+    }, [icon]);
+
+    const buttonIconElement = useMemo(() => {
+        switch (buttonIcon) {
+            case 'github':
+                return <FaGithub className="mr-2 group-hover:text-white" />;
+            case 'discord':
+                return <FaDiscord className="mr-2 group-hover:text-white" />;
+            case 'rocket':
+                return <FaSpaceShuttle className="mr-2 group-hover:text-white" />;
+            default:
+                return null;
+        }
+    }, [buttonIcon]);
 
     if (!isClient) {
         return null; // o puedes retornar un loader, un placeholder, etc.
@@ -37,47 +62,13 @@ const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
         "mx-2",
         "md:mx-0"
     );
-    
+
     const paragraphClasses = classNames(
-        "m-2",
-        "text-white",
-        "group-hover:text-white", // Cambia el color del texto a blanco al hacer hover
-        "transition",
-        "duration-400",
+        "text-base",
+        "group-hover:text-white"
     );
 
-    let iconElement;
-    switch (icon) {
-        case 'building':
-            iconElement = <FontAwesomeIcon icon={faHandshake} size="3x" className="block mx-auto mb-4 group-hover:text-white" />;
-            break;
-        case 'briefcase':
-            iconElement = <FontAwesomeIcon icon={faBriefcase} size="3x" className="block mx-auto mb-4 group-hover:text-white" />;
-            break;
-        case 'microchip':
-            iconElement = <FontAwesomeIcon icon={faMicrochip} size="3x" className="block mx-auto mb-4 group-hover:text-white" />;
-            break;
-        default:
-            iconElement = null;
-    }
-
-    let buttonIconElement;
-    switch (buttonIcon) {
-        case 'github':
-            buttonIconElement = <FaGithub className="mr-2 group-hover:text-white" />;
-            break;
-        case 'discord':
-            buttonIconElement = <FaDiscord className="mr-2 group-hover:text-white" />;
-            break;
-        case 'rocket':
-            buttonIconElement = <FaSpaceShuttle className="mr-2 group-hover:text-white" />;
-            break;
-        default:
-            buttonIconElement = null;
-    }
-
     return (
-        <Link to="/blog/under-hood">
             <motion.div 
                 className={cardClasses}
                 initial={{ opacity: 0 }}
@@ -91,13 +82,15 @@ const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
                     <p className={paragraphClasses}>
                         {description}
                     </p>
-                    <button type="button" className="mt-4 border-r-2 border-blue-900 transform transition-transform hover:scale-110 group-hover:text-white font-bold py-2 px-4 rounded-xl inline-flex items-center">
+                    <Link to="/blog/under-hood">
+                    <button type="button" className=" text-white mt-4 border-r-2 border-blue-900 transform transition-transform hover:scale-110 group-hover:text-white font-bold py-2 px-4 rounded-xl inline-flex items-center">
                         {buttonIconElement}
                         {buttonText}
                     </button>
+                    </Link>
+
                 </div>
             </motion.div>
-        </Link>
     );
 };
 
