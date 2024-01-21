@@ -41,14 +41,17 @@ function App() {
                                     title="Products" 
                                     description="Explore my diverse portfolio of applications and new releases. I leverage React, Next.js, and TypeScript to build robust, scalable solutions. Feel free to contribute and don't forget to leave a star if you appreciate my work." 
                                     buttonText="GitHub" 
-                                    buttonIcon ="github"                       
+                                    buttonIcon ="github"
+                                    buttonLink='https://github.com/LennyDevX'                      
                                 />
                                 <Card 
                                     icon="building"
                                     title="Enterprise" 
                                     description="I collaborate with a team of developers on a blog platform for the tech community. Visit our repository to learn more and collaborate with us, and don't forget to leave a star." 
                                     buttonText="Discord" 
-                                    buttonIcon ="discord"                       
+                                    buttonIcon ="discord"  
+                                    buttonLink='https://discord.gg/c252kH9v'
+                                                         
                                 />
                                 <Card 
                                     icon="microchip"

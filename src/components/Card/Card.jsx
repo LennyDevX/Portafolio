@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
+const Card = ({ icon, title, description, buttonText, buttonIcon, buttonLink }) => {
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
@@ -82,11 +82,11 @@ const Card = ({ icon, title, description, buttonText, buttonIcon }) => {
                     <p className={paragraphClasses}>
                         {description}
                     </p>
-                    <Link to="/blog/under-hood">
-                    <button type="button" className=" text-white mt-4 border-r-2 border-blue-900 transform transition-transform hover:scale-110 group-hover:text-white font-bold py-2 px-4 rounded-xl inline-flex items-center">
-                        {buttonIconElement}
-                        {buttonText}
-                    </button>
+                    <Link to={buttonLink}>
+                        <button type="button" className=" text-white mt-4 border-r-2 border-blue-900 transform transition-transform hover:scale-110 group-hover:text-white font-bold py-2 px-4 rounded-xl inline-flex items-center">
+                            {buttonIconElement}
+                            {buttonText}
+                        </button>
                     </Link>
 
                 </div>
@@ -100,6 +100,7 @@ Card.propTypes = {
     description: PropTypes.string.isRequired,
     buttonText: PropTypes.string.isRequired,
     buttonIcon: PropTypes.string,
+    buttonLink: PropTypes.string.isRequired,
 };
 
 export default Card;
