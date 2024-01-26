@@ -41,7 +41,7 @@ const HeroSection = () => {
                 transition={{ duration: 1.5, delay: 0.5 }}
             >
                 <div className="w-2/4 md:w-full mx-auto md:max-w-sm items-center block top-0 left-0">
-                    <div className="bg-clip-content text-transparent bg-gradient-to-r from-blue-500 via-green-500 to-purple-500 rounded-full p-2 flex">
+                    <div className="bg-clip-content text-transparent bg-gradient-to-r from-green-700 via-blue-700 to-purple-700 rounded-full p-2 flex">
                         <img
                             src={image.src} 
                             alt={image.alt} 

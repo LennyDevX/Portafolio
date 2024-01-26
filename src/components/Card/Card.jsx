@@ -1,7 +1,9 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FaGithub, FaDiscord, FaSpaceShuttle } from 'react-icons/fa';
+import { FaDiscord, FaSpaceShuttle } from 'react-icons/fa';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 import { faHandshake, faMicrochip, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
@@ -29,8 +31,8 @@ const Card = ({ icon, title, description, buttonText, buttonIcon, buttonLink }) 
 
     const buttonIconElement = useMemo(() => {
         switch (buttonIcon) {
-            case 'github':
-                return <FaGithub className="mr-2 group-hover:text-white" />;
+            case 'search':
+                return <FontAwesomeIcon icon={faSearch} className="mr-2 group-hover:text-white" />;
             case 'discord':
                 return <FaDiscord className="mr-2 group-hover:text-white" />;
             case 'rocket':
@@ -77,7 +79,7 @@ const Card = ({ icon, title, description, buttonText, buttonIcon, buttonLink }) 
                 whileHover={{ scale: 1.05 }} // Solo crece al hacer hover
             >
                 {iconElement}
-                <div className= "px-6 py-4">
+                <div className= "px-5 py-5">
                     <div className="font-bold text-xl mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-white to-blue-600">{title}</div>                
                     <p className={paragraphClasses}>
                         {description}

@@ -1,47 +1,75 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faJsSquare, faCss3Alt } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';import { faReact, faJsSquare, faCss3Alt, faTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faCode, faCloud, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+
 
 const Footer = () => {
     const links = {
-        'React Documentation': 'https://react.dev/learn',
-        'Next.js Documentation': 'https://nextjs.org/docs',
-        'Vite Documentation': 'https://vitejs.dev/guide/',
-        'Node.js Documentation': 'https://nodejs.org/en/docs/',
-        'Express.js Documentation': 'https://expressjs.com/en/4x/api.html',
-        'MongoDB Documentation': 'https://docs.mongodb.com/',
-        'About Sintetix': 'https://sintetixhub.com/about',
-        'GitHub Copilot': 'https://copilot.github.com/',
+        'React': 'https://reactjs.org/',
+        'Next.js': 'https://nextjs.org/',
+        'Vite ': 'https://vitejs.dev/',
+        'About': 'https://sintetix.com/about',
+        'GitHub': 'https://github.com/LennyDevX',
         'Umbrella App': 'https://umbrella-app-ejqq.vercel.app/',
-        'Contact': 'https://sintetixhub.com/contact',
-        'Twitter': 'https://twitter.com/lennych_nft',
+        'Contact': '#',
+        'Twitter': 'https://twitter.com/sintetix',
         'LinkedIn': 'https://www.linkedin.com/in/lenny-mercado-valdez-330643141/'
     };
 
     return (
-        <footer className= "shadow bg-opacity-50 bg-black rounded-lg text-white py-10 px-5 grid grid-cols-3 md:grid-cols-3 items-start">
+        <footer className=" bg-gray-2300 rounded-lg text-white py-10 px-5 grid grid-cols-3 md:grid-cols-3 items-start">
             <div>
+                <h3 className="font-bold mb-2">Tecnologías</h3>
                 <ul className="space-y-3">
-                    {['React Documentation', 'Next.js Documentation', 'Vite Documentation'].map((enlace, index) => (
-                        <li key={index}><a href={links[enlace]} alt={`Go to ${enlace}`} className="hover:underline" rel="noopener noreferrer" target="_blank">{enlace}</a></li>
+                    {[
+                        { name: 'React', icon: faReact },
+                        { name: 'Next.js', icon: faCode },
+                        { name: 'Vite ', icon: faCode }
+                    ].map((item, index) => (
+                        <li key={index}>
+                            <a href={links[item.name]} alt={`Go to ${item.name}`} className="hover:underline footer-link" rel="noopener noreferrer" target="_blank">
+                                <FontAwesomeIcon icon={item.icon} className="mr-2" />
+                                {item.name}
+                            </a>
+                        </li>
                     ))}
                 </ul>
             </div>
             <div>
+                <h3 className="font-bold mb-2">Proyectos</h3>
                 <ul className="space-y-3">
-                    {['About Sintetix', 'GitHub Copilot', 'Umbrella App'].map((enlace, index) => (
-                        <li key={index}><a href={links[enlace]} alt={`Go to ${enlace}`} className="hover:underline" rel="noopener noreferrer" target="_blank">{enlace}</a></li>
+                    {[
+                        { name: 'About me', icon: faUserCircle },
+                        { name: 'GitHub', icon: faGithub },
+                        { name: 'Umbrella App', icon: faCloud }
+                    ].map((item, index) => (
+                        <li key={index}>
+                            <a href={links[item.name]} alt={`Go to ${item.name}`} className="hover:underline footer-link" rel="noopener noreferrer" target="_blank">
+                                <FontAwesomeIcon icon={item.icon} className="mr-2" />
+                                {item.name}
+                            </a>
+                        </li>
                     ))}
                 </ul>
             </div>
             <div>
+                <h3 className="font-bold mb-2">Contacto</h3>
                 <ul className="space-y-3 md:mt-0">
-                    {['Contact', 'Twitter', 'LinkedIn'].map((enlace, index) => (
-                        <li key={index + 4}><a href={links[enlace]} alt={`Go to ${enlace}`} className="hover:underline" rel="noopener noreferrer" target="_blank">{enlace}</a></li>
+                    {[
+                        { name: 'Contact', icon: faEnvelope },
+                        { name: 'Twitter', icon: faTwitter },
+                        { name: 'LinkedIn', icon: faLinkedin }
+                    ].map((item, index) => (
+                        <li key={index + 4}>
+                            <a href={links[item.name]} alt={`Go to ${item.name}`} className="hover:underline footer-link " rel="noopener noreferrer" target="_blank">
+                                <FontAwesomeIcon icon={item.icon} className="mr-2" />
+                                {item.name}
+                            </a>
+                        </li>
                     ))}
                 </ul>
             </div>
-            <div className="col-span-full text-center md:mt-5 mt-7"> <br/>
+            <div className="col-span-full text-center md:mt-5 mt-7">
                 ©2024 All rights reserved. SintetixHub.com
                 <div className="mt-4">
                     <FontAwesomeIcon icon={faJsSquare} className="mx-2" />
