@@ -1,0 +1,22 @@
+@keyframes fade-in-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-35px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-down {
+    animation: fade-in-down 1.2s ease-out forwards;
+}
+
+.footer-link {
+    color: #c4c4cb;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.25s;
+}

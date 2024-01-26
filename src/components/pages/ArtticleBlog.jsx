@@ -6,7 +6,7 @@ const ArticleBlog = () => {
     const location = useLocation();
     const query = new URLSearchParams(location.search);
 
-    const text = ["Welcome To Sintetix"];
+    const text = ["Inside My Porfolio "];
 
     const longestText = text.reduce((a, b) => a.length > b.length ? a : b);
     const titleRef = useRef(null);
@@ -28,25 +28,26 @@ const ArticleBlog = () => {
                 {text[0]}
             </h1>
             <p className="text-lg mb-4 text-center mx-auto max-w-prose">
-                Welcome to Sintetix, an innovative web application that amalgamates the best of blogging and social networking into a single platform. At Sintetix, users can read and upload articles, engage in discussions, and express their appreciation with a simple "like".<br/><br/>
+                Welcome to my portfolio, a powerful web application that showcases my skills and projects as a web developer.<br/>
+                This platform is more than just a showcase; it's a testament to my expertise and dedication.<br/><br/>
 
-                But Sintetix is more than just a blogging platform. It's built on a robust foundation of cutting-edge, modern technologies.<br/><br/>
+                Built with modern technologies, my portfolio provides a seamless, responsive user experience.
+                I utilize React for the user interface, renowned for its interactive capabilities and component-based architecture.
+                This ensures the maintainability and scalability of my application.<br/><br/>
 
-                We utilize React for our user interface. React is a JavaScript library renowned for building interactive user interfaces. It provides a seamless, responsive user experience. Moreover, React's component-based architecture facilitates maintainability and scalability of our application.<br/><br/>
+                For styling, I employ Tailwind CSS, a utility-first framework that enables efficient and highly customizable UI design.
+                This ensures my portfolio is responsive and functions well across a variety of devices and screen sizes.<br/><br/>
 
-                For styling, we employ Tailwind CSS, a low-level utility-first framework that enables efficient and highly customizable UI design. With Tailwind CSS, we can create responsive designs that look and function well across a variety of devices and screen sizes.<br/><br/>
+                The application logic is handled with JavaScript, the most popular programming language for web development.
+                This allows me to create dynamic client-side interactions, enhancing the user experience.<br/><br/>
 
-                The application logic is handled with JavaScript, the most popular programming language for web development. JavaScript allows us to create dynamic client-side interactions, enhancing the user experience.<br/><br/>
+                On the server-side, I use Express, a minimalist and flexible framework for Node.js.
+                For deployment, I use Vercel, a cloud deployment platform that allows for swift and efficient implementation.<br/><br/>
 
-                On the server-side, we use Express, a minimalist and flexible framework for Node.js. Express equips us with the necessary tools to build our web server and handle HTTP requests.<br/><br/>
+                My portfolio is not just a showcase, but also a testament to my skills as a web developer.
+                It highlights my ability to create dynamic, interactive web applications, and my commitment to using the latest technologies and best practices in web development.<br/><br/>
 
-                Finally, for deployment, we use Vercel, a cloud deployment platform that allows us to implement our application swiftly and efficiently.<br/><br/>
-
-                Sintetix is not just a blogging platform, but also a social network. Users can follow others, interact with their posts, and form communities around common interests. This fosters a dynamic and participatory environment where users can share ideas, learn from each other, and form meaningful connections.<br/><br/>
-
-                Our goal with Sintetix is to provide a platform where users can freely express themselves, share their thoughts and ideas, and connect with others who share their interests. We believe that by combining aspects of blogging and social networking, we can create a unique and valuable experience for our users.<br/><br/>
-
-                We hope you enjoy your time on Sintetix and we're excited to see what our community will create. Welcome to Sintetix!
+                I hope you enjoy exploring my portfolio. Welcome!
             </p>
             <div className="flex space-x-4">
                 <button aria-label="Like" className="px-4 py-2 hover:text-red-500 bg-blue-500 text-white rounded flex items-center space-x-2 transition transform hover:scale-110">
