@@ -1,4 +1,5 @@
 import React from 'react';
+import { faCode, faCodeBranch, faCodeCommit, faSync, faBug, faRocket, faWrench, faFlagCheckered } from '@fortawesome/free-solid-svg-icons';
 import { useInView } from 'react-intersection-observer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HeroSection from './Hero/HeroSection.jsx';
@@ -10,6 +11,7 @@ import Footer from './Footer/Footer.jsx';
 import ArticleBlog from './pages/ArtticleBlog.jsx';
 import HirePage from './pages/HirePage.jsx'; 
 import ProjectCard from './Card/ProjectCard.jsx';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
     const [refHeroSection, inViewHeroSection] = useInView({
@@ -71,17 +73,47 @@ function App() {
                 }/>
                 <Route path="/blog" element={<ArticleBlog />} />
                 <Route path="/project" element={
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 ml-6 mt-6">
-                        <ProjectCard 
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 ml-6 mt-6">
+                    <ProjectCard 
                         title="Umbrella App" 
                         description="Umbrella is a weather application that allows you to know the weather in your city and other cities around the world. It's simple, fast, beautiful, and free. With the API from Tomorrow.io, you can get the weather forecast for the next 24 hours and the next 7 days."
                         githubLink="https://github.com/LennyDevX"
                         demoLink="https://umbrella-app-ejqq.vercel.app/"
                         image="/Weather2.png"
                         technologies={["Vue", "Vuetify", "JavaScript"]}
+                        spamText="2 days ago"
+                        progress={60}
+                        progressText={"Release v1.0"}
                     />
+                    <ProjectCard 
+                        title="Layla AI" 
+                        description="Layla is a chatbot powered by Google AI that allows you to chat with her and ask her questions. She can answer your questions and help you with your tasks. She can also tell you jokes and play games with you. She is a very smart and intelligent chatbot."
+                        githubLink="https://github.com/LennyDevX/Layla"
+                        demoLink="https://layla-r09in3hal-lennydevxs-projects.vercel.app/"
+                        image="/LaylaAI.png"
+                        technologies={["React", "Tailwindcss", "Google Cloud"]}
+                        spamText="Beta Release"
+                        progress={80}
+                        progressText={"Beta 2"}
+                        icon={faBug}
                         
-                    </div>
+                        
+                    
+                    />
+                    <ProjectCard 
+                        title="Todo App" 
+                        description="Working on a Todo app for my porfolio, this will be my next project release. Support my work by leaving a star on my GitHub repository. I will be releasing the first version of this app soon. Stay tuned for more updates."
+                        image="/Todo.png"
+                        technologies={["undefiend", "undefiend", "undefiend"]}
+                        spamText="Beta"
+                        icon={faWrench}
+                        progress={20}
+                        progressText={"Beta 1"}
+                        
+                        
+                    
+                    />
+                </div>
                 } />
                 <Route path="/hire" element={<HirePage />} />            
             </Routes>

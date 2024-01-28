@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';import { faReact, faJsSquare, faCss3Alt, faTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faCode, faCloud, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faCode, faCloud, faUserCircle, faRobot } from '@fortawesome/free-solid-svg-icons';
 
 
 const Footer = () => {
@@ -8,7 +8,7 @@ const Footer = () => {
         'React': 'https://reactjs.org/',
         'Next.js': 'https://nextjs.org/',
         'Vite ': 'https://vitejs.dev/',
-        'About': 'https://sintetix.com/about',
+        'About': 'https://layla-r09in3hal-lennydevxs-projects.vercel.app/',
         'GitHub': 'https://github.com/LennyDevX',
         'Umbrella App': 'https://umbrella-app-ejqq.vercel.app/',
         'Contact': '#',
@@ -39,7 +39,7 @@ const Footer = () => {
                 <h3 className="font-bold mb-2">Proyectos</h3>
                 <ul className="space-y-3">
                     {[
-                        { name: 'About me', icon: faUserCircle },
+                        { name: 'LAyla AI', icon: faRobot },
                         { name: 'GitHub', icon: faGithub },
                         { name: 'Umbrella App', icon: faCloud }
                     ].map((item, index) => (
