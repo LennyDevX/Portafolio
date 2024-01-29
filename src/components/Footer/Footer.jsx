@@ -19,7 +19,7 @@ const Footer = () => {
     return (
         <footer className=" bg-gray-2300 rounded-lg text-white py-10 px-5 grid grid-cols-3 md:grid-cols-3 items-start">
             <div>
-                <h3 className="font-bold mb-2">Tecnologías</h3>
+                <h3 className="font-bold mb-2">Tecnologies</h3>
                 <ul className="space-y-3">
                     {[
                         { name: 'React', icon: faReact },
@@ -36,10 +36,10 @@ const Footer = () => {
                 </ul>
             </div>
             <div>
-                <h3 className="font-bold mb-2">Proyectos</h3>
+                <h3 className="font-bold mb-2">Projects</h3>
                 <ul className="space-y-3">
                     {[
-                        { name: 'LAyla AI', icon: faRobot },
+                        { name: 'Layla AI', icon: faRobot },
                         { name: 'GitHub', icon: faGithub },
                         { name: 'Umbrella App', icon: faCloud }
                     ].map((item, index) => (
@@ -53,7 +53,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div>
-                <h3 className="font-bold mb-2">Contacto</h3>
+                <h3 className="font-bold mb-2">Contact me</h3>
                 <ul className="space-y-3 md:mt-0">
                     {[
                         { name: 'Contact', icon: faEnvelope },

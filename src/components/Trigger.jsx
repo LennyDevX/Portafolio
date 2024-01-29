@@ -81,9 +81,10 @@ function App() {
                         demoLink="https://umbrella-app-ejqq.vercel.app/"
                         image="/Weather2.png"
                         technologies={["Vue", "Vuetify", "JavaScript"]}
-                        spamText="2 days ago"
+                        spamText="New update"
                         progress={60}
-                        progressText={"Release v1.0"}
+                        progressText={"Next Update 60%"}
+                        spanColor={"text-green-300"}
                     />
                     <ProjectCard 
                         title="Layla AI" 
@@ -92,9 +93,10 @@ function App() {
                         demoLink="https://layla-r09in3hal-lennydevxs-projects.vercel.app/"
                         image="/LaylaAI.png"
                         technologies={["React", "Tailwindcss", "Google Cloud"]}
-                        spamText="Beta Release"
+                        spamText="Alpha 1 Release"
                         progress={80}
-                        progressText={"Beta 2"}
+                        spanColor={"text-orange-300"}
+                        progressText={"Alpha 2"}
                         icon={faBug}
                         
                         
@@ -105,10 +107,11 @@ function App() {
                         description="Working on a Todo app for my porfolio, this will be my next project release. Support my work by leaving a star on my GitHub repository. I will be releasing the first version of this app soon. Stay tuned for more updates."
                         image="/Todo.png"
                         technologies={["undefiend", "undefiend", "undefiend"]}
-                        spamText="Beta"
+                        spamText="Prototype"
                         icon={faWrench}
                         progress={20}
-                        progressText={"Beta 1"}
+                        spanColor={"text-yellow-300"}
+                        progressText={"Alpha 1 20%"}
                         
                         
                     

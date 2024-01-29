@@ -10,24 +10,21 @@ const HirePage = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-4 mt-2'>
                 <CardHire 
                     icon="Servicios de Programación" 
-                    title='Servicios de Programación'
-                    description="Como experto en React, Node, Express y TailwindCSS, ofrezco servicios de desarrollo web de primera calidad. Mi enfoque se centra en crear soluciones eficientes y personalizadas que se ajusten a tus necesidades específicas. Mi objetivo es proporcionar un equilibrio perfecto entre calidad y precio." 
-                    buttonText="CONTRATAR"
-                    buttonLink="/servicios"
+                    title='Web Development'
+                    description="I especialist on web development, with the most popular tecnologies on the market, like React, Next.js, Vue, Tailwindcss, and more. I have experience on the development of web applications, with a high performance and productivity." 
+                   
                 />
                 <CardHire 
                     icon="Mi Trabajo y Proceso" 
-                    title='Mi Trabajo y Proceso'
-                    description="Mi proceso de trabajo está diseñado para garantizar tu satisfacción. Trabajo de manera eficiente y siempre cumplo con los plazos acordados. Mi tarifa es competitiva y justa, reflejando la alta calidad de los servicios que ofrezco." 
-                    buttonText="SABER MAS"
-                    buttonLink="/proceso"
+                    title='Price and Process'
+                    description=" I offer a high quality product with a competitive price. I work with a client-first methodology, I focus on your needs from the beginning. I design and develop applications with high performance and productivity, always with the goal of boosting your success. Your satisfaction is my priority" 
+                    
                 />
                 <CardHire 
                     icon="Metodología Client-First" 
-                    title='Metodología Client-First'
-                    description="Mi metodología 'Client-First' se centra en atender tus necesidades desde el principio. Diseño y desarrollo aplicaciones con un alto rendimiento y productividad, siempre con el objetivo de impulsar tu éxito. Tu satisfacción es mi prioridad." 
-                buttonText="VER MAS DETALLES"
-                    buttonLink="/metodologia"
+                    title='Priority and Satisfaction'
+                    description="I work with a client-first methodology, I focus on your needs from the beginning. I design and develop applications with high performance and productivity, always with the goal of boosting your success. Your satisfaction is my priority." 
+                
                 />
                 
             </div>
