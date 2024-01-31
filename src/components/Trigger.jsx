@@ -106,12 +106,13 @@ function App() {
                         title="Todo App" 
                         description="Working on a Todo app for my porfolio, this will be my next project release. Support my work by leaving a star on my GitHub repository. I will be releasing the first version of this app soon. Stay tuned for more updates."
                         image="/Todo.png"
-                        technologies={["undefiend", "undefiend", "undefiend"]}
+                        technologies={["React", "Tailwdincss", "Vite"]}
                         spamText="Prototype"
                         icon={faWrench}
-                        progress={20}
+                        githubLink="https://github.com/LennyDevX/Todo-App"
+                        progress={40}
                         spanColor={"text-yellow-300"}
-                        progressText={"Alpha 1 20%"}
+                        progressText={"Alpha 1 40%"}
                         
                         
                     

@@ -6,7 +6,7 @@ import { faEnvelope, faCode, faCloud, faUserCircle, faRobot } from '@fortawesome
 const Footer = () => {
     const links = {
         'React': 'https://reactjs.org/',
-        'Next.js': 'https://nextjs.org/',
+        'Vue': 'https://vuejs.org/',
         'Vite ': 'https://vitejs.dev/',
         'About': 'https://layla-r09in3hal-lennydevxs-projects.vercel.app/',
         'GitHub': 'https://github.com/LennyDevX',
@@ -23,7 +23,7 @@ const Footer = () => {
                 <ul className="space-y-3">
                     {[
                         { name: 'React', icon: faReact },
-                        { name: 'Next.js', icon: faCode },
+                        { name: 'Vue', icon: faCode },
                         { name: 'Vite ', icon: faCode }
                     ].map((item, index) => (
                         <li key={index}>
