@@ -31,8 +31,8 @@ const Navbar = () => {
     );
 
     const submenuClasses = classNames(
-        'transform', 'transition-transform', 'duration-300', 'hover:scale-105',
-        'absolute', 'right-0', 'mt-8', 'w-48', 'rounded-md', 'shadow-lg', 'bg-white', 'ring-1', 'ring-black', 'ring-opacity-5', 'divide-y', 'divide-gray-100', 'origin-top-right', 'transition-all', 'duration-200', 'ease-in-out', isSubmenuOpen ? 'block' : 'hidden'
+        'transform', 'transition-transform', 'duration-300', '',
+        'absolute', 'right-0', 'mt-8', 'w-48', 'rounded-md', 'shadow-lg', 'bg-white', '', '', '', '', 'divide-gray-100', '', 'transition-all', 'duration-300', 'ease-in', isSubmenuOpen ? 'block' : 'hidden'
     );
 
     return (
@@ -47,7 +47,6 @@ const Navbar = () => {
             <div className={submenuClasses}>
                 <NavLink to="/services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-900">Services</NavLink>
                 <NavLink to="/community" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-900">Community</NavLink>
-                <NavLink to="/technologies" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-900">Technologies</NavLink>
             </div>
         </nav>
     );
