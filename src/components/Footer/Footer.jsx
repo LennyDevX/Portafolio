@@ -10,7 +10,7 @@ const Footer = () => {
         'Vite ': 'https://vitejs.dev/',
         'About': 'https://layla-r09in3hal-lennydevxs-projects.vercel.app/',
         'GitHub': 'https://github.com/LennyDevX',
-        'Umbrella App': 'https://umbrella-app-ejqq.vercel.app/',
+        'Umbrella': 'https://umbrella-app-ejqq.vercel.app/',
         'Contact': '#',
         'Twitter': 'https://twitter.com/sintetix',
         'LinkedIn': 'https://www.linkedin.com/in/lenny-mercado-valdez-330643141/'
@@ -41,7 +41,7 @@ const Footer = () => {
                     {[
                         { name: 'Layla AI', icon: faRobot },
                         { name: 'GitHub', icon: faGithub },
-                        { name: 'Umbrella App', icon: faCloud }
+                        { name: 'Umbrella', icon: faCloud }
                     ].map((item, index) => (
                         <li key={index}>
                             <a href={links[item.name]} alt={`Go to ${item.name}`} className="hover:underline footer-link" rel="noopener noreferrer" target="_blank">

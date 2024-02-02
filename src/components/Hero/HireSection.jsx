@@ -1,6 +1,14 @@
-import React  from 'react';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const HireSection = () => {
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+
+    const toggleSidebar = () => {
+        setSidebarOpen(!sidebarOpen);
+    };
+
     const image = {
         src: '/HireImg.png',
         alt: 'Nueva descripción de la imagen',
@@ -36,6 +44,18 @@ const HireSection = () => {
 
                     If you're looking for a programmer who combines technical skills with a customer-focused approach, look no further.<br /> I'm here to turn your digital ideas into reality.
                 </p>
+                <NavLink to="/services">
+                    <motion.button
+                        onClick={toggleSidebar}
+                        className="hero-section-button mt-4 inline-block bg-transparent border border-blue-300 hover:text-black hover:bg-green-300 text-white  py-3 px-5 rounded-lg transform transition-transform duration-200 hover:scale-110"
+                        title="Learn more about our daily motivation tips"
+                        initial={{ opacity: 0, }} 
+                        animate={{ opacity: 1, }} 
+                        transition={{ duration: 1, delay: 1.5 }}
+                    >
+                        Get Started
+                    </motion.button>
+                </NavLink>
             </div>
         </div>
     );

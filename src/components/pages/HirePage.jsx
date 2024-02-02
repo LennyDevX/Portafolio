@@ -7,6 +7,7 @@ const HirePage = () => {
     return (
         <>
             <HireSection />
+
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-4 mt-2'>
                 <CardHire 
                     icon="Servicios de Programación" 
@@ -26,7 +27,7 @@ const HirePage = () => {
                     description="I work with a client-first methodology, I focus on your needs from the beginning. I design and develop applications with high performance and productivity, always with the goal of boosting your success. Your satisfaction is my priority." 
                 
                 />
-                
+
             </div>
         </>
     );

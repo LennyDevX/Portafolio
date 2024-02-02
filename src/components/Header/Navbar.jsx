@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
-    const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
-    const toggleSubmenu = () => setIsSubmenuOpen(prevIsSubmenuOpen => !prevIsSubmenuOpen);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const toggleSidebar = () => setIsSidebarOpen(prevIsSidebarOpen => !prevIsSidebarOpen);
     const node = useRef();
 
     const handleClickOutside = e => {
@@ -13,7 +13,7 @@ const Navbar = () => {
             return;
         }
         // outside click 
-        setIsSubmenuOpen(false);
+        setIsSidebarOpen(false);
     };
 
     useEffect(() => {
@@ -27,26 +27,37 @@ const Navbar = () => {
 
     const navClasses = classNames(
         'flex', 'items-center', 'justify-between', 'flex-wrap', 
-        'p-6', 'rounded-2xl', 'text-white', 'text-center',  'opacity-75', 'bg-black', 'shadow-lg'
+        'p-6', 'rounded-2xl', 'text-white', 'text-center', 'bg-black', 'shadow-lg'
     );
 
-    const submenuClasses = classNames(
-        'transform', 'transition-transform', 'duration-300', '',
-        'absolute', 'right-0', 'mt-8', 'w-48', 'rounded-md', 'shadow-lg', 'bg-white', '', '', '', '', 'divide-gray-100', '', 'transition-all', 'duration-300', 'ease-in', isSubmenuOpen ? 'block' : 'hidden'
+    const sidebarClasses = classNames(
+        'transform', 'transition-transform', 'duration-400', 'ease-in', 'duration-200',
+        'fixed', 'right-0', 'top-0', 'h-full', 'w-64', 'shadow-lg', 'p-6', 'm-auto', 'overflow-y-auto', 'z-50', isSidebarOpen ? 'translate-x-0' : 'translate-x-full'
     );
 
     return (
-        <nav className={navClasses} ref={node}>
+        <nav className={navClasses}>
             <div className="flex items-center justify-between w-full">
                 <div className="flex items-center flex-shrink-0 mr-6">
                     <NavLink to="/" className="font-semibold italic text-xl tracking-tight text-white">LennyDevX</NavLink>
                     <div className="text-left text-blue-300 ml-5">V 1.7</div>
                 </div>
-                <button onClick={toggleSubmenu} className="flex items-center bg-transparent border border-blue-300 transform transition-transform duration-300 hover:scale-105">Discover</button>
+                <div className="flex items-center justify-end">
+                    <NavLink to="/services">
+                        <button
+                            onClick={SubmitEvent}
+                            className="hero-section-button inline-block bg-transparent border border-green-300 hover:text-black hover:bg-green-300 text-white rounded-lg transform transition-transform duration-400 hover:scale-110"
+                            title="Learn more about our daily motivation tips"
+                        >
+                            Get Started
+                        </button>
+                    </NavLink>
+                    <button onClick={toggleSidebar} className="flex items-center bg-transparent border border-purple-300 hover:bg-purple-800 transform transition-transform duration-400 hover:scale-110 ml-4">Discover</button>
+                </div>
             </div>
-            <div className={submenuClasses}>
-                <NavLink to="/services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-900">Services</NavLink>
-                <NavLink to="/community" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-900">Community</NavLink>
+            <div ref={node} className={sidebarClasses} style={{background: '#000'}}>
+                <NavLink onClick={toggleSidebar} to="/services" className="block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:bg-purple-900">Services</NavLink>
+                <NavLink onClick={toggleSidebar} to="/community" className="block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:bg-purple-900">Community</NavLink>
             </div>
         </nav>
     );
