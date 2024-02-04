@@ -11,6 +11,7 @@ import HirePage from './pages/HirePage.jsx';
 import ProjectPage from './pages/ProjectPage.jsx';
 import PriceSection from './pages/PriceSection.jsx';
 import CardPage from './pages/CardPage.jsx';
+import InfoDoc from './documentation/InfoDoc.jsx';
 
 function App() {
     const [refHeroSection, inViewHeroSection] = useInView({
@@ -45,6 +46,7 @@ function App() {
                         </div>
                     </>
                 }/>
+                <Route path="/documentation" element={<InfoDoc />} />
                 <Route path="/services" element={<PriceSection />} /> // Usa ServicesPage aquí
                 <Route path="/blog" element={<ArticleBlog />} />
                 <Route path="/project" element={<ProjectPage />} />

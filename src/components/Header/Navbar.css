@@ -1,3 +1,18 @@
 .sidebar {
    background-color: black;
   }
+
+
+.hamburger-menu {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   width: 0.8rem;
+   height: 1.5rem;
+}
+
+.hamburger-menu div {
+   width: 0.8rem;
+   height: 0.1rem;
+   background: currentColor;
+}

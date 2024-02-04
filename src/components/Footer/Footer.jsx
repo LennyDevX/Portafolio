@@ -8,7 +8,7 @@ const Footer = () => {
         'React': 'https://reactjs.org/',
         'Vue': 'https://vuejs.org/',
         'Vite ': 'https://vitejs.dev/',
-        'About': 'https://layla-r09in3hal-lennydevxs-projects.vercel.app/',
+        'Layla AI': 'https://layla-r09in3hal-lennydevxs-projects.vercel.app/',
         'GitHub': 'https://github.com/LennyDevX',
         'Umbrella': 'https://umbrella-app-ejqq.vercel.app/',
         'Contact': '#',

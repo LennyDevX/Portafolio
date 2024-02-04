@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './Navbar.css'
+import { faCoffee, faUsers, faRobot, faUmbrella, faProjectDiagram, faHandshake } from '@fortawesome/free-solid-svg-icons';
+
 
 const Navbar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -40,9 +44,18 @@ const Navbar = () => {
             <div className="flex items-center justify-between w-full">
                 <div className="flex items-center flex-shrink-0 mr-6">
                     <NavLink to="/" className="font-semibold italic text-xl tracking-tight text-white">LennyDevX</NavLink>
-                    <div className="text-left text-blue-300 ml-5">V 1.7</div>
+                    <div className="text-left text-green-200 ml-5">V 2.0</div>
                 </div>
                 <div className="flex items-center justify-end">
+                <NavLink to="/documentation">
+                        <button
+                            onClick={SubmitEvent}
+                            className="hero-section-button inline-block bg-transparent border mr-4 border-red-300 hover:text-black hover:bg-red-300 text-white rounded-lg transform transition-transform duration-400 hover:scale-110"
+                            title="Learn more about our daily motivation tips"
+                        >
+                            Documentation
+                        </button>
+                    </NavLink>
                     <NavLink to="/services">
                         <button
                             onClick={SubmitEvent}
@@ -52,12 +65,35 @@ const Navbar = () => {
                             Get Started
                         </button>
                     </NavLink>
-                    <button onClick={toggleSidebar} className="flex items-center bg-transparent border border-purple-300 hover:bg-purple-800 transform transition-transform duration-400 hover:scale-110 ml-4">Discover</button>
+                    <button onClick={toggleSidebar} className="flex items-center bg-transparent border hover:border-purple-300 border-purple-300 transform transition-transform duration-400 hover:scale-110 ml-4">
+                        <div className="hamburger-menu">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </button>
                 </div>
             </div>
             <div ref={node} className={sidebarClasses} style={{background: '#000'}}>
-                <NavLink onClick={toggleSidebar} to="/services" className="block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:bg-purple-900">Services</NavLink>
-                <NavLink onClick={toggleSidebar} to="/community" className="block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:bg-purple-900">Community</NavLink>
+            <NavLink onClick={toggleSidebar} to="/services" className="block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:text-black hover:bg-green-400">
+                 Services <FontAwesomeIcon icon={faCoffee} className='mx-1' />
+            </NavLink>
+            <NavLink onClick={toggleSidebar} to="https://discord.gg/fhe8P6M2" target='_blank' className="block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:text-black hover:bg-sky-400">
+                 Community <FontAwesomeIcon icon={faUsers} className='mx-1' />
+            </NavLink>
+            <NavLink onClick={toggleSidebar} to="https://layla-r09in3hal-lennydevxs-projects.vercel.app/" target='_blank' className=" hover:text-black block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:bg-red-400">
+                 Layla AI <FontAwesomeIcon icon={faRobot} className='mx-1' />
+            </NavLink>
+            <NavLink onClick={toggleSidebar} to="/community" target='_blank' className="block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:text-black hover:bg-purple-400">
+                Umbrella App  <FontAwesomeIcon icon={faUmbrella} className='mx-1' /> 
+            </NavLink>
+            <NavLink onClick={toggleSidebar} to="/community" className="block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:text-black hover:bg-orange-400">
+                 Next projects <FontAwesomeIcon icon={faProjectDiagram} className='mx-1' />
+            </NavLink>
+            <NavLink onClick={toggleSidebar} to="/community" className="block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:text-black hover:bg-yellow-400">
+                 Collaborations <FontAwesomeIcon icon={faHandshake} className='mx-1' />
+            </NavLink>
+
             </div>
         </nav>
     );
