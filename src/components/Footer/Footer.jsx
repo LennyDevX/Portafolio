@@ -1,16 +1,16 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';import { faReact, faJsSquare, faCss3Alt, faTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faCode, faCloud, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faCode, faCloud, faUserCircle, faRobot } from '@fortawesome/free-solid-svg-icons';
 
 
 const Footer = () => {
     const links = {
         'React': 'https://reactjs.org/',
-        'Next.js': 'https://nextjs.org/',
+        'Vue': 'https://vuejs.org/',
         'Vite ': 'https://vitejs.dev/',
-        'About': 'https://sintetix.com/about',
+        'Layla AI': 'https://layla-r09in3hal-lennydevxs-projects.vercel.app/',
         'GitHub': 'https://github.com/LennyDevX',
-        'Umbrella App': 'https://umbrella-app-ejqq.vercel.app/',
+        'Umbrella': 'https://umbrella-app-ejqq.vercel.app/',
         'Contact': '#',
         'Twitter': 'https://twitter.com/sintetix',
         'LinkedIn': 'https://www.linkedin.com/in/lenny-mercado-valdez-330643141/'
@@ -19,11 +19,11 @@ const Footer = () => {
     return (
         <footer className=" bg-gray-2300 rounded-lg text-white py-10 px-5 grid grid-cols-3 md:grid-cols-3 items-start">
             <div>
-                <h3 className="font-bold mb-2">Tecnologías</h3>
+                <h3 className="font-bold mb-2">Tecnologies</h3>
                 <ul className="space-y-3">
                     {[
                         { name: 'React', icon: faReact },
-                        { name: 'Next.js', icon: faCode },
+                        { name: 'Vue', icon: faCode },
                         { name: 'Vite ', icon: faCode }
                     ].map((item, index) => (
                         <li key={index}>
@@ -36,12 +36,12 @@ const Footer = () => {
                 </ul>
             </div>
             <div>
-                <h3 className="font-bold mb-2">Proyectos</h3>
+                <h3 className="font-bold mb-2">Projects</h3>
                 <ul className="space-y-3">
                     {[
-                        { name: 'About me', icon: faUserCircle },
+                        { name: 'Layla AI', icon: faRobot },
                         { name: 'GitHub', icon: faGithub },
-                        { name: 'Umbrella App', icon: faCloud }
+                        { name: 'Umbrella', icon: faCloud }
                     ].map((item, index) => (
                         <li key={index}>
                             <a href={links[item.name]} alt={`Go to ${item.name}`} className="hover:underline footer-link" rel="noopener noreferrer" target="_blank">
@@ -53,7 +53,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div>
-                <h3 className="font-bold mb-2">Contacto</h3>
+                <h3 className="font-bold mb-2">Contact me</h3>
                 <ul className="space-y-3 md:mt-0">
                     {[
                         { name: 'Contact', icon: faEnvelope },

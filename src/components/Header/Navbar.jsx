@@ -1,15 +1,42 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './Navbar.css'
+import { faCoffee, faUsers, faRobot, faUmbrella, faProjectDiagram, faHandshake } from '@fortawesome/free-solid-svg-icons';
+
 
 const Navbar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const toggleSidebar = useCallback(() => setIsSidebarOpen(prevIsSidebarOpen => !prevIsSidebarOpen), []);
+    const toggleSidebar = () => setIsSidebarOpen(prevIsSidebarOpen => !prevIsSidebarOpen);
+    const node = useRef();
+
+    const handleClickOutside = e => {
+        if (node.current.contains(e.target)) {
+            // inside click
+            return;
+        }
+        // outside click 
+        setIsSidebarOpen(false);
+    };
+
+    useEffect(() => {
+        // add when mounted
+        document.addEventListener("mousedown", handleClickOutside);
+        // return function to be called when unmounted
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
     const navClasses = classNames(
         'flex', 'items-center', 'justify-between', 'flex-wrap', 
-        'p-6', 'rounded-2xl', 'text-white', 'text-center',  'opacity-75', 'bg-black', 'shadow-lg'
+        'p-6', 'rounded-2xl', 'text-white', 'text-center', 'bg-black', 'shadow-lg'
+    );
+
+    const sidebarClasses = classNames(
+        'transform', 'transition-transform', 'duration-400', 'ease-in', 'duration-200',
+        'fixed', 'right-0', 'top-0', 'h-full', 'w-64', 'shadow-lg', 'p-6', 'm-auto', 'overflow-y-auto', 'z-50', isSidebarOpen ? 'translate-x-0' : 'translate-x-full'
     );
 
     return (
@@ -17,37 +44,59 @@ const Navbar = () => {
             <div className="flex items-center justify-between w-full">
                 <div className="flex items-center flex-shrink-0 mr-6">
                     <NavLink to="/" className="font-semibold italic text-xl tracking-tight text-white">LennyDevX</NavLink>
-                    <div className="text-left text-blue-300 ml-5">V 1.7</div>
+                    <div className="text-left text-green-200 ml-5">V 2.0</div>
                 </div>
-                <button onClick={toggleSidebar} className="flex items-center bg-transparent border border-blue-300 transform transition-transform duration-300 hover:scale-105">Discover</button>
+                <div className="flex items-center justify-end">
+                <NavLink to="/documentation">
+                        <button
+                            onClick={SubmitEvent}
+                            className="hero-section-button inline-block bg-transparent border mr-4 border-red-300 hover:text-black hover:bg-red-300 text-white rounded-lg transform transition-transform duration-400 hover:scale-110"
+                            title="Learn more about our daily motivation tips"
+                        >
+                            Documentation
+                        </button>
+                    </NavLink>
+                    <NavLink to="/services">
+                        <button
+                            onClick={SubmitEvent}
+                            className="hero-section-button inline-block bg-transparent border border-green-300 hover:text-black hover:bg-green-300 text-white rounded-lg transform transition-transform duration-400 hover:scale-110"
+                            title="Learn more about our daily motivation tips"
+                        >
+                            Get Started
+                        </button>
+                    </NavLink>
+                    <button onClick={toggleSidebar} className="flex items-center bg-transparent border hover:border-purple-300 border-purple-300 transform transition-transform duration-400 hover:scale-110 ml-4">
+                        <div className="hamburger-menu">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </button>
+                </div>
             </div>
-            <Sidebar isOpen={isSidebarOpen} />
-            {isSidebarOpen && <div className="fixed inset-0 bg-black opacity-50" onClick={toggleSidebar}></div>}
+            <div ref={node} className={sidebarClasses} style={{background: '#000'}}>
+            <NavLink onClick={toggleSidebar} to="/services" className="block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:text-black hover:bg-green-400">
+                 Services <FontAwesomeIcon icon={faCoffee} className='mx-1' />
+            </NavLink>
+            <NavLink onClick={toggleSidebar} to="https://discord.gg/fhe8P6M2" target='_blank' className="block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:text-black hover:bg-sky-400">
+                 Community <FontAwesomeIcon icon={faUsers} className='mx-1' />
+            </NavLink>
+            <NavLink onClick={toggleSidebar} to="https://layla-r09in3hal-lennydevxs-projects.vercel.app/" target='_blank' className=" hover:text-black block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:bg-red-400">
+                 Layla AI <FontAwesomeIcon icon={faRobot} className='mx-1' />
+            </NavLink>
+            <NavLink onClick={toggleSidebar} to="/community" target='_blank' className="block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:text-black hover:bg-purple-400">
+                Umbrella App  <FontAwesomeIcon icon={faUmbrella} className='mx-1' /> 
+            </NavLink>
+            <NavLink onClick={toggleSidebar} to="/community" className="block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:text-black hover:bg-orange-400">
+                 Next projects <FontAwesomeIcon icon={faProjectDiagram} className='mx-1' />
+            </NavLink>
+            <NavLink onClick={toggleSidebar} to="/community" className="block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:text-black hover:bg-yellow-400">
+                 Collaborations <FontAwesomeIcon icon={faHandshake} className='mx-1' />
+            </NavLink>
+
+            </div>
         </nav>
     );
-};
-
-const Sidebar = ({ isOpen }) => {
-    const sidebarClasses = classNames(
-        'fixed', 'top-0', 'right-0', 'w-64', 'h-full', 'bg-blue-900', 'p-6', 'overflow-auto', 'z-10',
-        'transform', 'transition-transform', 'duration-500', 'ease-in-out', isOpen ? 'translate-x-0' : 'translate-x-full'
-    );
-
-    const linkClasses = classNames(
-        'block', 'mt-4', 'text-white', 'hover:text-gray-300', 'mr-4'
-    );
-
-    return (
-        <div className={sidebarClasses}>
-            <NavLink to="/services" className={linkClasses} activeClassName="active">Services</NavLink>
-            <NavLink to="/community" className={linkClasses} activeClassName="active">Community</NavLink>
-            <NavLink to="/technologies" className={`${linkClasses} mr-0`} activeClassName="active">Technologies</NavLink>
-        </div>
-    );
-};
-
-Sidebar.propTypes = {
-    isOpen: PropTypes.bool.isRequired,
 };
 
 export default Navbar;

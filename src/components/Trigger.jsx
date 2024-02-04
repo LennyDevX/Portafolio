@@ -5,11 +5,13 @@ import HeroSection from './Hero/HeroSection.jsx';
 import Navbar from './Header/Navbar.jsx'; 
 import SecondHero from './Hero/SecondHero.jsx';
 import ThirdHero from './Hero/ThirdHero.jsx';
-import Card from './Card/Card.jsx';
 import Footer from './Footer/Footer.jsx';
 import ArticleBlog from './pages/ArtticleBlog.jsx';
 import HirePage from './pages/HirePage.jsx'; 
-import ProjectCard from './Card/ProjectCard.jsx';
+import ProjectPage from './pages/ProjectPage.jsx';
+import PriceSection from './pages/PriceSection.jsx';
+import CardPage from './pages/CardPage.jsx';
+import InfoDoc from './documentation/InfoDoc.jsx';
 
 function App() {
     const [refHeroSection, inViewHeroSection] = useInView({
@@ -36,53 +38,18 @@ function App() {
                         <SecondHero />
 
                         <div ref={refCard} style={{visibility: inViewCard ? 'visible' : 'hidden'}}>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 ml-6 mt-6">
-                                <Card 
-                                    icon="briefcase" 
-                                    title="Products" 
-                                    description="Explore my diverse portfolio of applications and new releases. I leverage React, Next.js, and TypeScript to build robust, scalable solutions. Feel free to contribute and don't forget to leave a star if you appreciate my work." 
-                                    buttonText="See More" 
-                                    buttonIcon ="search"
-                                    buttonLink='/project'                      
-                                />
-                                <Card 
-                                    icon="building"
-                                    title="Enterprise" 
-                                    description="I collaborate with a team of developers on a blog platform for the tech community. Visit our repository to learn more and collaborate with us, join us on Discord." 
-                                    buttonText="Discord" 
-                                    buttonIcon ="discord"  
-                                    buttonLink='https://discord.gg/c252kH9v'
-                                                         
-                                />
-                                <Card 
-                                    icon="microchip"
-                                    title="Under-Hood" 
-                                    description="Discover the way I build my web applications. I share my knowledge and experience on my blog. I write about React, Next.js, TypeScript, and more. Feel free to contribute and don't forget to leave a star if you appreciate my work." 
-                                    buttonText="Learn More" 
-                                    buttonIcon ="rocket" 
-                                    buttonLink='/blog'                      
-                                />
-                            </div>
+                            <CardPage />
                         </div>
+
                         <div ref={refFooter} style={{visibility: inViewFooter ? 'visible' : 'hidden'}}>
                             <Footer />
                         </div>
                     </>
                 }/>
+                <Route path="/documentation" element={<InfoDoc />} />
+                <Route path="/services" element={<PriceSection />} /> // Usa ServicesPage aquí
                 <Route path="/blog" element={<ArticleBlog />} />
-                <Route path="/project" element={
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 ml-6 mt-6">
-                        <ProjectCard 
-                        title="Umbrella App" 
-                        description="Umbrella is a weather application that allows you to know the weather in your city and other cities around the world. It's simple, fast, beautiful, and free. With the API from Tomorrow.io, you can get the weather forecast for the next 24 hours and the next 7 days."
-                        githubLink="https://github.com/LennyDevX"
-                        demoLink="https://umbrella-app-ejqq.vercel.app/"
-                        image="/Weather2.png"
-                        technologies={["Vue", "Vuetify", "JavaScript"]}
-                    />
-                        
-                    </div>
-                } />
+                <Route path="/project" element={<ProjectPage />} />
                 <Route path="/hire" element={<HirePage />} />            
             </Routes>
         </Router>

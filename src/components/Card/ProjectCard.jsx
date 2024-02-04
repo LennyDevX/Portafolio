@@ -3,8 +3,12 @@ import { faSync } from '@fortawesome/free-solid-svg-icons';
 import { FaGithub, FaPlayCircle } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
-const ProjectCard = ({ title, description, githubLink, demoLink, image, technologies }) => {
-    const progress = 70; // Asume un valor de progreso del 80%
+const ProjectCard = ({ title, description, githubLink, demoLink, image, technologies, spamText, progress, progressText, icon, spanColor }) => {
+    progress = progress || 70; // Si no se proporciona un valor de progreso, se asume un valor de 70%
+    spamText = spamText || 'Next Update'; // Si no se proporciona un texto de progreso, se asume 'Release v1.0'
+    icon = icon || faSync; // Si no se proporciona un ícono, se asume faSync
+    spanColor = spanColor || 'text-white'; // Si no se proporciona un color de span, se asume 'text-white'
+    progressText = progressText || `${progress}%`; // Si no se proporciona un texto de progreso, se asume el valor de progreso
 
     return (
         <motion.div 
@@ -14,17 +18,17 @@ const ProjectCard = ({ title, description, githubLink, demoLink, image, technolo
             transition={{ duration: 0.6, delay: 0.1}}
             whileHover={{ scale: 1.05 }}
         >
-            <span className="absolute top-0 right-0 bg-blue-800 text-white rounded-bl-lg px-1 py-1 text-sm">
-                <FontAwesomeIcon icon={faSync} className="mr-1" />
-                New Update
+            <span className={`absolute top-0 right-0 bg-black ${spanColor} rounded-bl-lg px-1 py-1 text-sm`}>
+                <FontAwesomeIcon icon={icon} className="mr-1" />
+                {spamText}
             </span>
-            <img src={image} alt={title} className="w-full h-48 object-cover"/>
+            <img src={image} alt={title} className="w-full rounded-full mt-3 h-48 object-cover"/>
             <div className="px-4 py-4">
                 <div className="font-bold text-xl mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-white to-blue-500">{title}</div>                
                 <div className="relative pt-2">
                     <div className="overflow-hidden h-5 mb-4 text-xs flex rounded-lg bg-blue-400" aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100">
                         <div style={{ width: `${progress}%` }} className={`shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center transition-all duration-500 ease-in-out ${progress > 50 ? 'bg-green-700' : 'bg-red-700'}`}>
-                            <span className="text-sm ">Release v1.0</span>
+                            <span className="text-sm ">{progressText}</span>
                         </div>
                     </div>
                 </div>                

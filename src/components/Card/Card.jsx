@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaDiscord, FaSpaceShuttle } from 'react-icons/fa';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-
 import { faHandshake, faMicrochip, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';

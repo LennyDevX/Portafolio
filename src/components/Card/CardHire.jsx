@@ -1,7 +1,6 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase, faLightbulb, faChartBar } from '@fortawesome/free-solid-svg-icons';
-import PropTypes from 'prop-types';
+import { faCode, faLaptopCode, faMoneyBillWave, faProjectDiagram, faSmile, faStar } from '@fortawesome/free-solid-svg-icons';import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
 const CardHire = ({ icon = "icon", title = "Título de la tarjeta", description = "texto", buttonText = "Click me", buttonLink = "#" }) => {
@@ -14,11 +13,11 @@ const CardHire = ({ icon = "icon", title = "Título de la tarjeta", description 
     const iconElement = useMemo(() => {
         switch (icon) {
             case 'Servicios de Programación':
-                return <FontAwesomeIcon icon={faBriefcase} size="3x" className="block mx-auto mb-4 group-hover:text-white" />;
+                return <FontAwesomeIcon icon={faLaptopCode} size="3x" className="block mx-auto mb-4 group-hover:text-white" />;
             case 'Mi Trabajo y Proceso':
-                return <FontAwesomeIcon icon={faChartBar} size="3x" className="block mx-auto mb-4 group-hover:text-white" />;
+                return <FontAwesomeIcon icon={faMoneyBillWave} size="3x" className="block mx-auto mb-4 group-hover:text-white" />;
             case 'Metodología Client-First':
-                return <FontAwesomeIcon icon={faLightbulb} size="3x" className="block mx-auto mb-4 group-hover:text-white" />;
+                return <FontAwesomeIcon icon={faStar} size="3x" className="block mx-auto mb-4 group-hover:text-white" />;
         }
     }, [title]);
 
@@ -40,9 +39,7 @@ const CardHire = ({ icon = "icon", title = "Título de la tarjeta", description 
                 <p className="text-base group-hover:text-white">
                     {description}
                 </p>
-                <a href={buttonLink} className="mt-4 bg-transparent border border-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded inline-block">                    
-                {buttonText}
-                </a>
+                
             </div>
         </motion.div>
     );
