@@ -8,10 +8,9 @@
   font-family: 'Roboto', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  background-color: #20234c;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background: linear-gradient(to right, #141064ad, #42165db0, #400e6fb3, #0e1866c8);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,8 +34,7 @@ a:hover {
 }
 
 body {
-  margin: 1.1rem;
-  padding: 0.7rem;
+  padding: 0.5rem;
  
 }
 

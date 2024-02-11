@@ -47,10 +47,10 @@ const Navbar = () => {
                     <div className="text-left text-green-200 ml-5">V 2.0</div>
                 </div>
                 <div className="flex items-center justify-end">
-                <NavLink to="/documentation">
+                <NavLink to="/documentation" className="hidden md:block">
                         <button
                             onClick={SubmitEvent}
-                            className="hero-section-button inline-block bg-transparent border mr-4 border-red-300 hover:text-black hover:bg-red-300 text-white rounded-lg transform transition-transform duration-400 hover:scale-110"
+                            className="hero-section-button inline-block bg-transparent border px-3 mr-4 border-red-300 hover:text-black hover:bg-red-300 text-white rounded-lg transform transition-transform duration-400 hover:scale-110"
                             title="Learn more about our daily motivation tips"
                         >
                             Documentation
@@ -59,13 +59,13 @@ const Navbar = () => {
                     <NavLink to="/services">
                         <button
                             onClick={SubmitEvent}
-                            className="hero-section-button inline-block bg-transparent border border-green-300 hover:text-black hover:bg-green-300 text-white rounded-lg transform transition-transform duration-400 hover:scale-110"
+                            className="hero-section-button inline-block bg-transparent border px-3 border-green-300 hover:text-black hover:bg-green-300 text-white rounded-lg transform transition-transform duration-400 hover:scale-110"
                             title="Learn more about our daily motivation tips"
                         >
                             Get Started
                         </button>
                     </NavLink>
-                    <button onClick={toggleSidebar} className="flex items-center bg-transparent border hover:border-purple-300 border-purple-300 transform transition-transform duration-400 hover:scale-110 ml-4">
+                    <button onClick={toggleSidebar} className="flex items-center bg-transparent border px-3 hover:border-purple-300 border-purple-300 transform transition-transform duration-400 hover:scale-110 ml-4">
                         <div className="hamburger-menu">
                             <div></div>
                             <div></div>

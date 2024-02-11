@@ -12,7 +12,7 @@ const ProjectCard = ({ title, description, githubLink, demoLink, image, technolo
 
     return (
         <motion.div 
-            className="rounded-lg p-2 text-center text-white bg-black bg-opacity-40 transition-colors duration-400 group hover:text-white md:mx-0 relative"
+            className="rounded-lg p-3 text-center text-white border border-white bg-opacity-40 transition-colors duration-400 group hover:text-white md:mx-0 relative"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.1}}
@@ -24,7 +24,7 @@ const ProjectCard = ({ title, description, githubLink, demoLink, image, technolo
             </span>
             <img src={image} alt={title} className="w-full rounded-full mt-3 h-48 object-cover"/>
             <div className="px-4 py-4">
-                <div className="font-bold text-xl mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-white to-blue-500">{title}</div>                
+                <div className="font-bold text-xl mb-2 bg-clip-text bg-gradient-to-r from-blue-400 via-white to-blue-500">{title}</div>                
                 <div className="relative pt-2">
                     <div className="overflow-hidden h-5 mb-4 text-xs flex rounded-lg bg-blue-400" aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100">
                         <div style={{ width: `${progress}%` }} className={`shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center transition-all duration-500 ease-in-out ${progress > 50 ? 'bg-green-700' : 'bg-red-700'}`}>
@@ -41,10 +41,10 @@ const ProjectCard = ({ title, description, githubLink, demoLink, image, technolo
                     ))}
                 </div>
                 <div className="mt-4 flex justify-center space-x-2">
-                    <a href={githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center bg-transparent border border-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-2 rounded">
+                    <a href={githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center bg-transparent border border-blue-700 hover:bg-purple-400 hover:text-black text-white font-bold py-2 px-2 rounded">
                         <FaGithub size="1em" className="mr-1" /> GitHub
                     </a>
-                    <a href={demoLink} target="_blank" rel="noopener noreferrer" className="flex items-center bg-transparent border border-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-2 rounded">
+                    <a href={demoLink} target="_blank" rel="noopener noreferrer" className="flex items-center  border border-blue-700 hover:bg-red-400 hover:text-black  text-white font-bold py-2 px-2 rounded">
                         <FaPlayCircle size="1em" className="mr-1" /> Demo
                     </a>
                 </div>
