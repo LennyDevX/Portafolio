@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import CV from '../documentation/CV.pdf';
 import './Navbar.css'
-import { faCoffee, faUsers, faRobot, faUmbrella, faProjectDiagram, faHandshake } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee, faUsers, faRobot, faUmbrella, faProjectDiagram, faHandshake, faFilePdf } from '@fortawesome/free-solid-svg-icons';
 
 
 const Navbar = () => {
@@ -93,6 +94,11 @@ const Navbar = () => {
             <NavLink onClick={toggleSidebar} to="/community" className="block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:text-black hover:bg-yellow-400">
                  Collaborations <FontAwesomeIcon icon={faHandshake} className='mx-1' />
             </NavLink>
+            <a href={CV} download>
+                <div onClick={toggleSidebar} className="block px-4 py-2 text-sm text-white m-3 border rounded-lg hover:text-black hover:bg-blue-400">
+                    CV <FontAwesomeIcon icon={faFilePdf} className='mx-1' />
+                </div>
+            </a>
 
             </div>
         </nav>
