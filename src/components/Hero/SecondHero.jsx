@@ -7,7 +7,7 @@ const SecondHero = () => {
         src: DailyMotivation,
         alt: 'Daily Motivation',
         width: 350,
-        height: 350,
+        height: 350, 
         layout: 'responsive',
     };
 
